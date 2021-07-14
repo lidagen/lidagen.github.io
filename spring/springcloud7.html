@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringCloud Config -分布式配置中心 | GENDALI</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/lidagen.github.io/favicon.ico">
+    <meta name="description" content="积跬步。">
+    <link rel="preload" href="/lidagen.github.io/assets/css/0.styles.f529a957.css" as="style"><link rel="preload" href="/lidagen.github.io/assets/js/app.c01dd52b.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/2.cf33694f.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/123.4a4ab03e.js" as="script"><link rel="prefetch" href="/lidagen.github.io/assets/js/10.acec0d71.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/100.ca9d834b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/101.64c1d6b4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/102.7d19c3ab.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/103.2bf3c12a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/104.d5175b6d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/105.921e0c9c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/106.d90390cc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/107.c8ad3f16.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/108.93f465c5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/109.72ae16a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/11.9afe7acd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/110.b8ff6dae.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/111.f575cc3e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/112.a00de386.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/113.255e8cd6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/114.478f4e22.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/115.66fdae02.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/116.470a282a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/117.f80a0497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/118.c6bad757.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/119.43efef51.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/12.e621c40d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/120.5a64f949.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/121.c8c9ab1d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/122.9ece23dd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/124.c9fd2d62.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/125.6bcadd94.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/126.47a4cd7d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/13.71c0eb2f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/14.68316a31.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/15.241df050.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/16.788c653d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/17.6a84844e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/18.1f7d9dd1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/19.471531e7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/20.497e59d2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/21.de38961c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/22.dad71561.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/23.3e44deaf.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/24.e5f2a8e5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/25.c8fbbde5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/26.0dbe31ba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/27.d18f6d7c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/28.f6fcef9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/29.f77e1b65.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/3.aed0670b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/30.b2d8d415.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/31.42bf8217.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/32.219c899d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/33.812d438f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/34.3cdc3fdf.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/35.e3e96a9c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/36.67a7f54f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/37.f7662208.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/38.0c6629e7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/39.2c6fd0e6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/4.7fbad105.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/40.81169a15.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/41.d2018999.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/42.aed937db.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/43.3781d01d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/44.b55ca497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/45.0ea0abb3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/46.c5d94a51.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/47.81c55696.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/48.fba7135d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/49.6feeced1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/5.2000c489.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/50.3b8b8214.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/51.ea6d1533.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/52.1848f836.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/53.c0eabec4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/54.d3c23245.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/55.92897b2c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/56.92c4c1de.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/57.1487af2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/58.87840c42.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/59.00bc10cc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/6.52c39e57.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/60.dc602d80.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/61.43ade8fd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/62.9b98e247.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/63.451af110.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/64.98821e80.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/65.822e762c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/66.3f488d26.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/67.7a684650.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/68.aa8929f7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/69.05a68ebb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/7.e7ae5cd7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/70.b1f63a84.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/71.33c91dd0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/72.3ce05de1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/73.25e06067.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/74.0e46dd73.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/75.e4032f9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/76.8046c3c7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/77.8ef89999.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/78.f5085e0c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/79.7526ee38.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/8.3a78e21e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/80.5aa5742c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/81.12bd7907.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/82.bd2199d9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/83.eee19536.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/84.ad1cc6d4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/85.d412d8f6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/86.bfeb73ef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/87.da93fdd0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/88.97442619.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/89.27789f78.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/9.7865edf1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/90.291a7d37.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/91.a4d0dcdc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/92.cbc1dbbb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/93.4f353458.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/94.f1b991d5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/95.251c58bc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/96.7e82b096.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/97.e6076074.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/98.66d4a68b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/99.6da6fada.js">
+    <link rel="stylesheet" href="/lidagen.github.io/assets/css/0.styles.f529a957.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lidagen.github.io/" class="home-link router-link-active"><img src="/lidagen.github.io/img/1.jpg" alt="GENDALI" class="logo"> <span class="site-name can-hide">GENDALI</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA WEB</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DATABASE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>SpringCloud</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lidagen.github.io/spring/springcloud1.html" class="sidebar-link">SpringCloud服务注册中心之Eureka</a></li><li><a href="/lidagen.github.io/spring/springcloud2.html" class="sidebar-link">SpringCloud服务注册中心之Zookeeper</a></li><li><a href="/lidagen.github.io/spring/springcloud3.html" class="sidebar-link">SpringCloud服务调用之Ribbon</a></li><li><a href="/lidagen.github.io/spring/springcloud4.html" class="sidebar-link">SpringCloud服务调用之OpenFeign</a></li><li><a href="/lidagen.github.io/spring/springcloud5.html" class="sidebar-link">SpringCloud服务降级之Hystrix</a></li><li><a href="/lidagen.github.io/spring/springcloud6.html" class="sidebar-link">SpringCloud服务网关之Gateway</a></li><li><a href="/lidagen.github.io/spring/springcloud7.html" class="active sidebar-link">SpringCloud Config分布式配置中心</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/spring/springcloud7.html#springcloud-config-分布式配置中心" class="sidebar-link">SpringCloud Config -分布式配置中心</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/spring/springcloud7.html#springcloud-config-概述" class="sidebar-link">SpringCloud Config 概述</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/spring/springcloud7.html#springcloud-config的服务端server构建" class="sidebar-link">SpringCloud Config的服务端server构建</a></li></ul></li></ul></li><li><a href="/lidagen.github.io/spring/springcloud8.html" class="sidebar-link">SpringCloud服务总线之Bus</a></li><li><a href="/lidagen.github.io/spring/springcloud9.html" class="sidebar-link">SpringCloud消息驱动之Stream</a></li><li><a href="/lidagen.github.io/spring/springcloud10.html" class="sidebar-link">SpringCloud链路追踪之Sleuth</a></li><li><a href="/lidagen.github.io/spring/springAlibaba1.html" class="sidebar-link">SpringCloud Alibaba Nacos</a></li><li><a href="/lidagen.github.io/spring/springAlibaba2.html" class="sidebar-link">SpringCloud Alibaba Sentinel</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring源码</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>中间件</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境部署</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>读书笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VUE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NoSQL</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>MQ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JVM</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JUC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Activiti</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="springcloud-config-分布式配置中心"><a href="#springcloud-config-分布式配置中心" class="header-anchor">#</a> SpringCloud Config -分布式配置中心</h2> <h3 id="springcloud-config-概述"><a href="#springcloud-config-概述" class="header-anchor">#</a> SpringCloud Config 概述</h3> <h4 id="springcloud-config是什么"><a href="#springcloud-config是什么" class="header-anchor">#</a> SpringCloud Config是什么</h4> <ul><li><p>config是SpringCloud提供的集中化外部配置支持，配置服务器为各个不同微服务应用的所有环境提供了一个中心化的外部配置。</p></li> <li><p>类似携程Apollo，SpringCloud Config分为服务端和客户端两部分</p></li></ul> <h4 id="能干什么"><a href="#能干什么" class="header-anchor">#</a> 能干什么</h4> <ul><li><p>集中管理配置文件</p></li> <li><p>不同环境的不同配置，动态化的配置更新</p></li> <li><p>运行期间动态调整的数据，可以放在配置中心，且不需要重启即可感知新的配置</p></li> <li><p>将配置信息REST接口形式暴露</p></li></ul> <h3 id="springcloud-config的服务端server构建"><a href="#springcloud-config的服务端server构建" class="header-anchor">#</a> SpringCloud Config的服务端server构建</h3> <h4 id="github上新建一个项目，用来放置这些配置的数据"><a href="#github上新建一个项目，用来放置这些配置的数据" class="header-anchor">#</a> github上新建一个项目，用来放置这些配置的数据</h4> <ul><li>地址为 https://github.com/lidagen/cloud-config.git</li> <li>新建两个yml ,分别为<code>application-dev.yml</code> <code>application-prd.yml</code></li></ul> <h4 id="新建一个端口3344的项目"><a href="#新建一个端口3344的项目" class="header-anchor">#</a> 新建一个端口3344的项目</h4> <ul><li>pom.xml</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;parent&gt;
+        &lt;artifactId&gt;cloud2020&lt;/artifactId&gt;
+        &lt;groupId&gt;com.ws.springcloud&lt;/groupId&gt;
+        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;/parent&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;artifactId&gt;cloud-config-server3344&lt;/artifactId&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.ws.springcloud&lt;/groupId&gt;
+            &lt;artifactId&gt;api&lt;/artifactId&gt;
+            &lt;version&gt;${project.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!--springCloud config--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre></div><ul><li>yml</li></ul> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3344</span>
+
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> config<span class="token punctuation">-</span>server<span class="token punctuation">-</span>center
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">server</span><span class="token punctuation">:</span>
+        <span class="token key atrule">git</span><span class="token punctuation">:</span>
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/lidagen/cloud<span class="token punctuation">-</span>config.git
+          <span class="token key atrule">ignoreLocalSshSettings</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#为了激活基于属性的SSH配置</span>
+          <span class="token key atrule">search-paths</span><span class="token punctuation">:</span> <span class="token comment">## 搜索目录</span>
+            <span class="token punctuation">-</span> cloud<span class="token punctuation">-</span>config
+          <span class="token key atrule">default-label</span><span class="token punctuation">:</span> master <span class="token comment">#读取分支</span>
+       
+
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token comment">#设置与eureka交互的地址查询服务和注册服务需要依赖这个地址</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001<span class="token punctuation">:</span>7001/eureka/<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7002<span class="token punctuation">:</span>7002/eureka/
+
+
+</code></pre></div><ul><li>入口类</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>ws<span class="token punctuation">.</span>springcloud</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot</span><span class="token punctuation">.</span><span class="token class-name">SpringApplication</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure</span><span class="token punctuation">.</span><span class="token class-name">SpringBootApplication</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span>config<span class="token punctuation">.</span>server</span><span class="token punctuation">.</span><span class="token class-name">EnableConfigServer</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * USER: wang_s
+ * DATE：2020/3/14
+ * DESC：
+ **/</span>
+<span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableConfigServer</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConfigServerCenter3344</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">ConfigServerCenter3344</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>启动eureka和cofigserver ,如果报 <code>reject HostKey: github.com</code> ，请在github配置公钥</li> <li>浏览器输入 <code>http://localhost:3344/master/application-prd.yml</code> <code>http://localhost:3344/master/application-dev.yml</code>查看是否获取值</li></ul> <h4 id="服务端获取config配置"><a href="#服务端获取config配置" class="header-anchor">#</a> 服务端获取config配置</h4> <ul><li>新建一个3355端口Module</li> <li>pom.xml</li></ul> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">&quot;</span></span>
+         <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">&quot;</span></span>
+         <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>cloud2020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.ws.springcloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">&gt;</span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>cloud-config-client3355<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.ws.springcloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>${project.version}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-actuator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-netflix-eureka-client<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token comment">&lt;!--springCloud config--&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-config<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-devtools<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>runtime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>将模块下yml文件命名为bootstrap.yml
+<ul><li><p>application.yml 是用户级别资源配置项目</p></li> <li><p>bootstrap.yml 是系统级别配置，优先级别更高</p></li></ul></li></ul> <div class="language-yml extra-class"><pre class="language-yml"><code>  <span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">3355</span>
+
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> config<span class="token punctuation">-</span>client
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">config</span><span class="token punctuation">:</span>
+      <span class="token key atrule">label</span><span class="token punctuation">:</span> master <span class="token comment">#分支名</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> application <span class="token comment">#配置文件名</span>
+      <span class="token key atrule">profile</span><span class="token punctuation">:</span> dev <span class="token comment">#配置文件后缀 两个合起来就是github上的 application-dev</span>
+      <span class="token key atrule">uri</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">3344</span> <span class="token comment">#配置中心server IP地址</span>
+
+
+<span class="token key atrule">eureka</span><span class="token punctuation">:</span>
+  <span class="token key atrule">client</span><span class="token punctuation">:</span>
+    <span class="token key atrule">service-url</span><span class="token punctuation">:</span>
+      <span class="token comment">#设置与eureka交互的地址查询服务和注册服务需要依赖这个地址</span>
+      <span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//eureka7001<span class="token punctuation">:</span>7001/eureka/<span class="token punctuation">,</span>http<span class="token punctuation">:</span>//eureka7002<span class="token punctuation">:</span>7002/eureka/
+<span class="token comment">#暴露监控端点</span>
+<span class="token key atrule">management</span><span class="token punctuation">:</span>
+  <span class="token key atrule">endpoints</span><span class="token punctuation">:</span>
+    <span class="token key atrule">web</span><span class="token punctuation">:</span>
+      <span class="token key atrule">exposure</span><span class="token punctuation">:</span>
+        <span class="token key atrule">include</span><span class="token punctuation">:</span> <span class="token string">&quot;*&quot;</span>      
+</code></pre></div><ul><li>入口类</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableEurekaClient</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConfigClientCenter3355</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">ConfigClientCenter3355</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>调用Controller</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RefreshScope</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConfigClientController</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**config.info 是github中yml 文件配置的名称**/</span>
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">&quot;${config.info}&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> configInfo<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">&quot;/config/configInfo&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> configInfo<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>修改github上yml内容后，3344立刻响应，3355获取不到动态修改的值
+<ul><li><p>yml增加配置</p></li> <li><p>调用controller增加@RefreshScope</p></li> <li><p>需要运维运行 <code>curl -X POST &quot;localhost:3355/actuator/refresh&quot;</code> 刷新配置</p></li></ul></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/lidagen.github.io/spring/springcloud6.html" class="prev">
+        SpringCloud服务网关之Gateway
+      </a></span> <span class="next"><a href="/lidagen.github.io/spring/springcloud8.html">
+        SpringCloud服务总线之Bus
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/lidagen.github.io/assets/js/app.c01dd52b.js" defer></script><script src="/lidagen.github.io/assets/js/2.cf33694f.js" defer></script><script src="/lidagen.github.io/assets/js/123.4a4ab03e.js" defer></script>
+  </body>
+</html>

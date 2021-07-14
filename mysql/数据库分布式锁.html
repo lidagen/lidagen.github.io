@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>分布式锁一 数据库分布式锁 | GENDALI</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/lidagen.github.io/favicon.ico">
+    <meta name="description" content="积跬步。">
+    <link rel="preload" href="/lidagen.github.io/assets/css/0.styles.f529a957.css" as="style"><link rel="preload" href="/lidagen.github.io/assets/js/app.c01dd52b.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/2.cf33694f.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/97.e6076074.js" as="script"><link rel="prefetch" href="/lidagen.github.io/assets/js/10.acec0d71.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/100.ca9d834b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/101.64c1d6b4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/102.7d19c3ab.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/103.2bf3c12a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/104.d5175b6d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/105.921e0c9c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/106.d90390cc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/107.c8ad3f16.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/108.93f465c5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/109.72ae16a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/11.9afe7acd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/110.b8ff6dae.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/111.f575cc3e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/112.a00de386.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/113.255e8cd6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/114.478f4e22.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/115.66fdae02.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/116.470a282a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/117.f80a0497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/118.c6bad757.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/119.43efef51.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/12.e621c40d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/120.5a64f949.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/121.c8c9ab1d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/122.9ece23dd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/123.4a4ab03e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/124.c9fd2d62.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/125.6bcadd94.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/126.47a4cd7d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/13.71c0eb2f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/14.68316a31.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/15.241df050.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/16.788c653d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/17.6a84844e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/18.1f7d9dd1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/19.471531e7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/20.497e59d2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/21.de38961c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/22.dad71561.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/23.3e44deaf.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/24.e5f2a8e5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/25.c8fbbde5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/26.0dbe31ba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/27.d18f6d7c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/28.f6fcef9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/29.f77e1b65.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/3.aed0670b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/30.b2d8d415.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/31.42bf8217.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/32.219c899d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/33.812d438f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/34.3cdc3fdf.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/35.e3e96a9c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/36.67a7f54f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/37.f7662208.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/38.0c6629e7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/39.2c6fd0e6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/4.7fbad105.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/40.81169a15.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/41.d2018999.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/42.aed937db.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/43.3781d01d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/44.b55ca497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/45.0ea0abb3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/46.c5d94a51.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/47.81c55696.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/48.fba7135d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/49.6feeced1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/5.2000c489.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/50.3b8b8214.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/51.ea6d1533.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/52.1848f836.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/53.c0eabec4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/54.d3c23245.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/55.92897b2c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/56.92c4c1de.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/57.1487af2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/58.87840c42.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/59.00bc10cc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/6.52c39e57.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/60.dc602d80.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/61.43ade8fd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/62.9b98e247.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/63.451af110.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/64.98821e80.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/65.822e762c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/66.3f488d26.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/67.7a684650.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/68.aa8929f7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/69.05a68ebb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/7.e7ae5cd7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/70.b1f63a84.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/71.33c91dd0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/72.3ce05de1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/73.25e06067.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/74.0e46dd73.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/75.e4032f9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/76.8046c3c7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/77.8ef89999.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/78.f5085e0c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/79.7526ee38.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/8.3a78e21e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/80.5aa5742c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/81.12bd7907.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/82.bd2199d9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/83.eee19536.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/84.ad1cc6d4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/85.d412d8f6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/86.bfeb73ef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/87.da93fdd0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/88.97442619.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/89.27789f78.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/9.7865edf1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/90.291a7d37.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/91.a4d0dcdc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/92.cbc1dbbb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/93.4f353458.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/94.f1b991d5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/95.251c58bc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/96.7e82b096.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/98.66d4a68b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/99.6da6fada.js">
+    <link rel="stylesheet" href="/lidagen.github.io/assets/css/0.styles.f529a957.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lidagen.github.io/" class="home-link router-link-active"><img src="/lidagen.github.io/img/1.jpg" alt="GENDALI" class="logo"> <span class="site-name can-hide">GENDALI</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA WEB</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>DATABASE</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lidagen.github.io/mysql/explain.html" class="sidebar-link">MySQL EXPLAIN详解</a></li><li><a href="/lidagen.github.io/mysql/mysqlIndex.html" class="sidebar-link">MySQL 索引</a></li><li><a href="/lidagen.github.io/mysql/mysqlLock.html" class="sidebar-link">MySQL 表锁、行锁</a></li><li><a href="/lidagen.github.io/mysql/transcation.html" class="sidebar-link">MySQL ACID与transcation</a></li><li><a href="/lidagen.github.io/mysql/dis_transcation.html" class="sidebar-link">分布式事务</a></li><li><a href="/lidagen.github.io/mysql/mvcc.html" class="sidebar-link">MySQL MVCC机制</a></li><li><a href="/lidagen.github.io/mysql/lock.html" class="sidebar-link">Mysql 乐观锁与悲观锁</a></li><li><a href="/lidagen.github.io/mysql/数据库分布式锁.html" class="active sidebar-link">分布式锁1 数据库分布式锁</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/mysql/数据库分布式锁.html#分布式锁一-数据库分布式锁" class="sidebar-link">分布式锁一 数据库分布式锁</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/mysql/数据库分布式锁.html#概述" class="sidebar-link">概述</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/mysql/数据库分布式锁.html#实现过程" class="sidebar-link">实现过程</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/mysql/数据库分布式锁.html#代码片段" class="sidebar-link">代码片段</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/mysql/数据库分布式锁.html#实现有以下几个问题：" class="sidebar-link">实现有以下几个问题：</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/mysql/数据库分布式锁.html#解决方法：" class="sidebar-link">解决方法：</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/mysql/数据库分布式锁.html#总结" class="sidebar-link">总结</a></li></ul></li></ul></li><li><a href="/lidagen.github.io/mysql/Redis分布式锁.html" class="sidebar-link">分布式锁2 Redis分布式锁</a></li><li><a href="/lidagen.github.io/mysql/ZK分布式锁.html" class="sidebar-link">分布式锁3 ZK分布式锁</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SpringCloud</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring源码</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>中间件</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境部署</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>读书笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VUE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NoSQL</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>MQ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JVM</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JUC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Activiti</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="分布式锁一-数据库分布式锁"><a href="#分布式锁一-数据库分布式锁" class="header-anchor">#</a> 分布式锁一 数据库分布式锁</h2> <h3 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h3> <ul><li><p>java提供的synchronized,Lock是在JVM层面的锁，在单应用部署时，可保证数据的一致性，在集群环境中，仍有可能出问题，这时候需要考虑分布式锁。</p></li> <li><p>数据库分布式锁，顾名思义就是基于数据库实现的一种锁，用于保证并发情况下数据一致性。基于mysql数据库的分布式锁有多种，可以用乐观锁或悲观锁实现，也可用一张表来实现分布式悲观锁。主要讲第二种的实现。</p></li></ul> <h3 id="实现过程"><a href="#实现过程" class="header-anchor">#</a> 实现过程</h3> <ul><li><p>数据库新建一张表用于，当我们要操作某个流程时，先在数据库里插入一条记录，当这个流程走完以后，再删除这条记录。基于 DB 的唯一索引。</p></li> <li><p>当并发请求进来后，先判断这张表是否存在记录，如果不存在则执行流程，存在的话，则结束本次请求。</p></li></ul> <h3 id="代码片段"><a href="#代码片段" class="header-anchor">#</a> 代码片段</h3> <ul><li>新建一张表,<strong>业务类型</strong>和<strong>业务ID</strong>做联合唯一索引。</li></ul> <div class="language-sql extra-class"><pre class="language-sql"><code><span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token punctuation">`</span>cs_one_by_one<span class="token punctuation">`</span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>cs_one_by_one<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+  <span class="token punctuation">`</span>BIZ_TYPE<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'业务类型'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>BIZ_ID<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'业务ID'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>METHOD<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'方法'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">`</span>CREATED_TIME<span class="token punctuation">`</span> <span class="token keyword">timestamp</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">ON</span> <span class="token keyword">UPDATE</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">COMMENT</span> <span class="token string">'创建时间'</span><span class="token punctuation">,</span>
+  <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>BIZ_TYPE<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>BIZ_ID<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">UNIQUE</span> <span class="token keyword">KEY</span> <span class="token punctuation">`</span>UI_CS_ONE_BY_ONE_BIZ_TYPE_BIZ_ID<span class="token punctuation">`</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>BIZ_TYPE<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>BIZ_ID<span class="token punctuation">`</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8 <span class="token keyword">COMMENT</span><span class="token operator">=</span><span class="token string">'OneByOne控制表'</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>实体类</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OneByOne</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/** 业务类型 */</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> bizType<span class="token punctuation">;</span>
+
+    <span class="token comment">/** 业务ID */</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> bizId<span class="token punctuation">;</span>
+
+    <span class="token comment">/** 方法 */</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> method<span class="token punctuation">;</span>
+
+    <span class="token comment">/** 创建时间 */</span>
+    <span class="token keyword">private</span> <span class="token class-name">Date</span>   createTime<span class="token punctuation">;</span>
+
+    
+    <span class="token keyword">private</span> <span class="token class-name">String</span> description<span class="token punctuation">;</span>
+    
+    <span class="token keyword">private</span> <span class="token keyword">boolean</span> insertSuccess<span class="token punctuation">;</span>
+    
+    
+    <span class="token comment">/**
+     * 创建一个接一个处理记录
+     * @param bizType 业务类型
+     * @param bizId 业务ID 
+     * @param method 方法
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">OneByOne</span><span class="token punctuation">(</span><span class="token class-name">String</span> bizType<span class="token punctuation">,</span> <span class="token class-name">String</span> bizId<span class="token punctuation">,</span> <span class="token class-name">String</span> method<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bizType <span class="token operator">=</span> bizType<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bizId <span class="token operator">=</span> bizId<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>method <span class="token operator">=</span> method<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 获取业务类型
+     * @return 业务类型
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getBizType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> bizType<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 设置业务类型
+     * @param bizType 业务类型
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBizType</span><span class="token punctuation">(</span><span class="token class-name">String</span> bizType<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bizType <span class="token operator">=</span> bizType<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 获取业务ID
+     * @return 业务ID
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getBizId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> bizId<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 设置业务ID
+     * @param bizId 业务ID
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBizId</span><span class="token punctuation">(</span><span class="token class-name">String</span> bizId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bizId <span class="token operator">=</span> bizId<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 获取方法
+     * @return 方法
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> method<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 设置方法
+     * @param method 方法
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setMethod</span><span class="token punctuation">(</span><span class="token class-name">String</span> method<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>method <span class="token operator">=</span> method<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 获取创建时间
+     * @return 创建时间
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">Date</span> <span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> createTime<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 设置创建时间
+     * @param createTime 创建时间
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setCreateTime</span><span class="token punctuation">(</span><span class="token class-name">Date</span> createTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>createTime <span class="token operator">=</span> createTime<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">/**
+     * @return the description
+     */</span>
+    <span class="token class-name">String</span> <span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> description<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * @param description the description to set
+     */</span>
+    <span class="token keyword">void</span> <span class="token function">setDescription</span><span class="token punctuation">(</span><span class="token class-name">String</span> description<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>description <span class="token operator">=</span> description<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * @return the insertSuccess
+     */</span>
+    <span class="token keyword">boolean</span> <span class="token function">isInsertSuccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> insertSuccess<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * @param insertSuccess the insertSuccess to set
+     */</span>
+    <span class="token keyword">void</span> <span class="token function">setInsertSuccess</span><span class="token punctuation">(</span><span class="token keyword">boolean</span> insertSuccess<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>insertSuccess <span class="token operator">=</span> insertSuccess<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>处理模板</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">//回调接口</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">CallBack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * 调用
+     * @return 结果
+     */</span>
+    <span class="token class-name">T</span> <span class="token function">invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 一个接一个业务处理模版&lt;br&gt;
+ * 防止在请求并发下，业务重复处理，比如重复充值。&lt;br&gt;
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">OneByOneTemplate</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/**
+     * 执行
+     * @param oneByOne 一个接一个处理记录
+     * @param callBack 回调
+     * @return 执行结果
+     */</span>
+    <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">T</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">OneByOne</span> oneByOne<span class="token punctuation">,</span> <span class="token class-name">CallBack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> callBack<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">/**
+ * 一个接一个业务处理模版默认实现&lt;br&gt;
+ * 
+ * &lt;p&gt;
+ * 用一个业务处理表记录，在处理前对锁状态进行判断 ，判断逻辑参见{@link #beforeInvoke}方法&lt;br&gt;
+ * 
+ * 业务处理表： 业务类型 PK|业务ID PK|方法|创建时间&lt;br&gt;
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OneByOneTemplateImpl</span> <span class="token keyword">implements</span> <span class="token class-name">OneByOneTemplate</span><span class="token punctuation">,</span> <span class="token class-name">InitializingBean</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">/** logger */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Logger</span> logger <span class="token operator">=</span> <span class="token class-name">LoggerFactory</span><span class="token punctuation">.</span><span class="token function">getLogger</span><span class="token punctuation">(</span><span class="token class-name">OneByOneTemplateImpl</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/** 插入处理记录 */</span>
+    <span class="token keyword">protected</span> <span class="token class-name">String</span> insert<span class="token punctuation">;</span>
+
+    <span class="token comment">/** 删除处理记录 */</span>
+    <span class="token keyword">protected</span> <span class="token class-name">String</span> delete<span class="token punctuation">;</span>
+
+    <span class="token comment">/** 表名 */</span>
+    <span class="token keyword">protected</span> <span class="token class-name">String</span> table <span class="token operator">=</span> <span class="token string">&quot;CS_ONE_BY_ONE&quot;</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/** 数据源 */</span>
+    <span class="token keyword">protected</span> <span class="token class-name">DataSource</span> dataSource<span class="token punctuation">;</span>
+
+    <span class="token comment">/** 事务模版 */</span>
+    <span class="token keyword">protected</span> <span class="token class-name">TransactionTemplate</span> transactionTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment">/** Jdbc模版 */</span>
+    <span class="token keyword">protected</span> <span class="token class-name">JdbcTemplate</span> jdbcTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * {@inheritDoc}
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token class-name">T</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">OneByOne</span> oneByOne<span class="token punctuation">,</span> <span class="token class-name">CallBack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> callBack<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        oneByOne<span class="token punctuation">.</span><span class="token function">setDescription</span><span class="token punctuation">(</span>oneByOne<span class="token punctuation">.</span><span class="token function">getBizType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;-&quot;</span> <span class="token operator">+</span> oneByOne<span class="token punctuation">.</span><span class="token function">getBizId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;-&quot;</span> <span class="token operator">+</span> oneByOne<span class="token punctuation">.</span><span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">beforeInvoke</span><span class="token punctuation">(</span>oneByOne<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">return</span> callBack<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">afterInvoke</span><span class="token punctuation">(</span>oneByOne<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 设置数据源
+     * 
+     * @param dataSource 数据源
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setDataSource</span><span class="token punctuation">(</span><span class="token class-name">DataSource</span> dataSource<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>dataSource <span class="token operator">=</span> dataSource<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 设置表名
+     * 
+     * @param table 表名
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setTable</span><span class="token punctuation">(</span><span class="token class-name">String</span> table<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>table <span class="token operator">=</span> table<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * {@inheritDoc}
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterPropertiesSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>dataSource <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span><span class="token class-name">CoreErrorCode</span><span class="token punctuation">.</span>ERROR_PARAM_NULL<span class="token punctuation">,</span> <span class="token string">&quot;数据源为空&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 初始化Jdbc模版和事务模版</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>jdbcTemplate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JdbcTemplate</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>dataSource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>transactionTemplate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TransactionTemplate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">DataSourceTransactionManager</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>dataSource<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 初始化SQL</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>insert <span class="token operator">=</span> <span class="token string">&quot;INSERT INTO &quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>table <span class="token operator">+</span> <span class="token string">&quot; (BIZ_TYPE, BIZ_ID, METHOD, CREATED_TIME) VALUES (?, ?, ?, ?)&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">this</span><span class="token punctuation">.</span>delete <span class="token operator">=</span> <span class="token string">&quot;DELETE FROM &quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>table <span class="token operator">+</span> <span class="token string">&quot; WHERE BIZ_TYPE = ? AND BIZ_ID = ?&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 回调前置
+     * 
+     * @param oneByOne 一个接一个处理记录
+     */</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">&quot;rawtypes&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;unchecked&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">beforeInvoke</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token class-name">OneByOne</span> oneByOne<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            oneByOne<span class="token punctuation">.</span><span class="token function">setInsertSuccess</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// 插入处理记录</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>transactionTemplate<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TransactionCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">doInTransaction</span><span class="token punctuation">(</span><span class="token class-name">TransactionStatus</span> status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    jdbcTemplate<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>insert<span class="token punctuation">,</span> oneByOne<span class="token punctuation">.</span><span class="token function">getBizType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> oneByOne<span class="token punctuation">.</span><span class="token function">getBizId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> oneByOne<span class="token punctuation">.</span><span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Throwable</span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            oneByOne<span class="token punctuation">.</span><span class="token function">setInsertSuccess</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>logger<span class="token punctuation">.</span><span class="token function">isWarnEnabled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                logger<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span>oneByOne<span class="token punctuation">.</span><span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;插入处理记录失败！异常信息:{}&quot;</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// 如果插入失败，抛出AppException</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">AppException</span><span class="token punctuation">(</span><span class="token class-name">CoreErrorCode</span><span class="token punctuation">.</span>ONE_BY_ONE_EXCEPTION<span class="token punctuation">,</span> oneByOne<span class="token punctuation">.</span><span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;业务正在处理中&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * 回调后置
+     * 
+     * @param oneByOne 一个接一个处理记录
+     */</span>
+    <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">&quot;rawtypes&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;unchecked&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">afterInvoke</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token class-name">OneByOne</span> oneByOne<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 插入失败，不删除处理记录</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>oneByOne<span class="token punctuation">.</span><span class="token function">isInsertSuccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// 删除处理记录</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>transactionTemplate<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TransactionCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">doInTransaction</span><span class="token punctuation">(</span><span class="token class-name">TransactionStatus</span> status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    jdbcTemplate<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>delete<span class="token punctuation">,</span> oneByOne<span class="token punctuation">.</span><span class="token function">getBizType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> oneByOne<span class="token punctuation">.</span><span class="token function">getBizId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Throwable</span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            logger<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>oneByOne<span class="token punctuation">.</span><span class="token function">getDescription</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;删除处理记录失败！&quot;</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>使用</li></ul> <div class="language-java extra-class"><pre class="language-java"><code>oneByOneTemplate<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">OneByOne</span><span class="token punctuation">(</span><span class="token class-name">OneByOneConstant</span><span class="token punctuation">.</span>BIZ_TYPE_SETTLE_DETAIL_ACCEPT<span class="token punctuation">,</span> dto<span class="token punctuation">.</span><span class="token function">getRequestSerialNo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;handle&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token keyword">new</span> <span class="token class-name">CallBack</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Result</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> <span class="token class-name">Result</span> <span class="token function">invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token class-name">Result</span> result <span class="token operator">=</span> <span class="token function">settleDetailAcceptHandle</span><span class="token punctuation">(</span>dto<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="实现有以下几个问题："><a href="#实现有以下几个问题：" class="header-anchor">#</a> 实现有以下几个问题：</h3> <ul><li>这把锁强依赖数据库的可用性，数据库是一个单点，一旦数据库挂掉，会导致业务系统不可用。</li> <li>这把锁没有失效时间，一旦解锁操作失败，就会导致锁记录一直在数据库中，其他线程无法再获得到锁。</li> <li>这把锁只能是非阻塞的，因为数据的insert操作，一旦插入失败就会直接报错。没有获得锁的线程并不会进入排队队列，要想再次获得锁就要再次触发获得锁操作。</li> <li>这把锁是非重入的，同一个线程在没有释放锁之前无法再次获得该锁。因为数据中数据已经存在了。</li></ul> <h3 id="解决方法："><a href="#解决方法：" class="header-anchor">#</a> 解决方法：</h3> <ul><li>数据库是单点？搞两个数据库，数据之前双向同步。一旦挂掉快速切换到备库上。</li> <li>没有失效时间？只要做一个定时任务，每隔一定时间把数据库中的超时数据清理一遍。</li> <li>非阻塞的？搞一个while循环，直到insert成功再返回成功。</li> <li>非重入的？在数据库表中加个字段，记录当前获得锁的机器的主机信息和线程信息，那么下次再获取锁的时候先查询数据库，如果当前机器的主机信息和线程信息在数据库可以查到的话，直接把锁分配给他就可以了。</li></ul> <h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <p>数据库分布式锁实现上来说，是简单容易理解的。但是其性能以及可靠性，比不上另外两种实现。可适用并发量不是很高的业务上。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/lidagen.github.io/mysql/lock.html" class="prev">
+        Mysql 乐观锁与悲观锁
+      </a></span> <span class="next"><a href="/lidagen.github.io/mysql/Redis分布式锁.html">
+        分布式锁2 Redis分布式锁
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/lidagen.github.io/assets/js/app.c01dd52b.js" defer></script><script src="/lidagen.github.io/assets/js/2.cf33694f.js" defer></script><script src="/lidagen.github.io/assets/js/97.e6076074.js" defer></script>
+  </body>
+</html>

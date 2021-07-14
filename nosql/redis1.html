@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis基础 | GENDALI</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/lidagen.github.io/favicon.ico">
+    <meta name="description" content="积跬步。">
+    <link rel="preload" href="/lidagen.github.io/assets/css/0.styles.f529a957.css" as="style"><link rel="preload" href="/lidagen.github.io/assets/js/app.c01dd52b.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/2.cf33694f.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/99.6da6fada.js" as="script"><link rel="prefetch" href="/lidagen.github.io/assets/js/10.acec0d71.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/100.ca9d834b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/101.64c1d6b4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/102.7d19c3ab.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/103.2bf3c12a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/104.d5175b6d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/105.921e0c9c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/106.d90390cc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/107.c8ad3f16.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/108.93f465c5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/109.72ae16a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/11.9afe7acd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/110.b8ff6dae.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/111.f575cc3e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/112.a00de386.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/113.255e8cd6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/114.478f4e22.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/115.66fdae02.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/116.470a282a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/117.f80a0497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/118.c6bad757.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/119.43efef51.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/12.e621c40d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/120.5a64f949.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/121.c8c9ab1d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/122.9ece23dd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/123.4a4ab03e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/124.c9fd2d62.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/125.6bcadd94.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/126.47a4cd7d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/13.71c0eb2f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/14.68316a31.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/15.241df050.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/16.788c653d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/17.6a84844e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/18.1f7d9dd1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/19.471531e7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/20.497e59d2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/21.de38961c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/22.dad71561.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/23.3e44deaf.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/24.e5f2a8e5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/25.c8fbbde5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/26.0dbe31ba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/27.d18f6d7c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/28.f6fcef9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/29.f77e1b65.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/3.aed0670b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/30.b2d8d415.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/31.42bf8217.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/32.219c899d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/33.812d438f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/34.3cdc3fdf.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/35.e3e96a9c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/36.67a7f54f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/37.f7662208.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/38.0c6629e7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/39.2c6fd0e6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/4.7fbad105.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/40.81169a15.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/41.d2018999.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/42.aed937db.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/43.3781d01d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/44.b55ca497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/45.0ea0abb3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/46.c5d94a51.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/47.81c55696.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/48.fba7135d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/49.6feeced1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/5.2000c489.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/50.3b8b8214.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/51.ea6d1533.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/52.1848f836.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/53.c0eabec4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/54.d3c23245.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/55.92897b2c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/56.92c4c1de.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/57.1487af2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/58.87840c42.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/59.00bc10cc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/6.52c39e57.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/60.dc602d80.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/61.43ade8fd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/62.9b98e247.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/63.451af110.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/64.98821e80.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/65.822e762c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/66.3f488d26.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/67.7a684650.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/68.aa8929f7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/69.05a68ebb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/7.e7ae5cd7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/70.b1f63a84.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/71.33c91dd0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/72.3ce05de1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/73.25e06067.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/74.0e46dd73.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/75.e4032f9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/76.8046c3c7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/77.8ef89999.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/78.f5085e0c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/79.7526ee38.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/8.3a78e21e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/80.5aa5742c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/81.12bd7907.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/82.bd2199d9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/83.eee19536.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/84.ad1cc6d4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/85.d412d8f6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/86.bfeb73ef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/87.da93fdd0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/88.97442619.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/89.27789f78.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/9.7865edf1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/90.291a7d37.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/91.a4d0dcdc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/92.cbc1dbbb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/93.4f353458.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/94.f1b991d5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/95.251c58bc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/96.7e82b096.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/97.e6076074.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/98.66d4a68b.js">
+    <link rel="stylesheet" href="/lidagen.github.io/assets/css/0.styles.f529a957.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lidagen.github.io/" class="home-link router-link-active"><img src="/lidagen.github.io/img/1.jpg" alt="GENDALI" class="logo"> <span class="site-name can-hide">GENDALI</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA WEB</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DATABASE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SpringCloud</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring源码</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>中间件</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境部署</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>读书笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VUE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>NoSQL</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lidagen.github.io/nosql/redis1.html" class="active sidebar-link">Redis基础 </a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis1.html#redis基础" class="sidebar-link">Redis基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis1.html#redis入门" class="sidebar-link">Redis入门</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis1.html#数据类型" class="sidebar-link">数据类型</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis1.html#通用命令" class="sidebar-link">通用命令</a></li></ul></li></ul></li><li><a href="/lidagen.github.io/nosql/redis2.html" class="sidebar-link">Redis高级</a></li><li><a href="/lidagen.github.io/nosql/redis3.html" class="sidebar-link">Redis集群</a></li><li><a href="/lidagen.github.io/nosql/redis4.html" class="sidebar-link">Redis应用</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>MQ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JVM</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JUC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Activiti</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="redis基础"><a href="#redis基础" class="header-anchor">#</a> Redis基础</h2> <h3 id="redis入门"><a href="#redis入门" class="header-anchor">#</a> Redis入门</h3> <h4 id="_1-nosql"><a href="#_1-nosql" class="header-anchor">#</a> 1.NoSQL</h4> <ul><li><p>NoSQL:即Not-Only SQL(泛指非关系型数据库)，作为关系型数据库的补充。</p></li> <li><p>作用：应对基于海量用户和海量数据前提下的数据处理问题。</p></li> <li><p>特征：</p> <ul><li>可伸缩，可扩容</li> <li>大数据量下的高性能</li> <li>灵活的数据类型</li> <li>高可用</li></ul></li> <li><p>常见的NoSQL</p> <ul><li>Redis</li> <li>memcache</li> <li>HBase</li> <li>MongoDB</li></ul></li></ul> <h4 id="_2-redis-简介"><a href="#_2-redis-简介" class="header-anchor">#</a> 2.Redis 简介</h4> <ul><li><p>Redis: (REmote DIctionary Server) 是C语言开发的开源高性能的键值对<code>key-value</code>数据库。</p></li> <li><p><strong>特征：</strong></p> <ul><li>数据间没有必然的关联关系</li> <li>内部采用单线程机制进行工作</li> <li>高性能（官方测试：50个并发执行100000个请求，读的速度是110000次/s,写的速度是81000次/s）</li> <li>多数据类型支持
+<ul><li>字符串类型 string</li> <li>列表类型 list</li> <li>散列类型 hash</li> <li>集合类型 set</li> <li>有序集合类型 sorted_set</li></ul></li> <li>持久化支持，可进行数据容灾恢复</li></ul></li> <li><p><strong>Redis 应用</strong></p> <ul><li>为热点数据加速查询（主要场景），比如热点商品，热点资讯等高访问量信息等。</li> <li>任务队列，如秒杀、抢购、购票排队等。</li> <li>即时信息查询，如各类排行榜、网站访问统计、公交到站信息、在线人数信息、设备信号等。</li> <li>时效信息控制，如验证码控制，投票控制等。</li> <li>分布式数据共享，比如分布式应用中的session共享。</li> <li>消息队列</li> <li>分布式锁</li></ul></li></ul> <h3 id="数据类型"><a href="#数据类型" class="header-anchor">#</a> 数据类型</h3> <h4 id="_1-string字符串"><a href="#_1-string字符串" class="header-anchor">#</a> 1.<strong>string字符串</strong></h4> <ul><li>存储的数据：单个数据，最简单的数据存储类型，也是最常用的数据存储类型</li> <li>存储的数据格式： 一个存储空间保存一个数据</li> <li>存储的内容： 通常使用字符串，如果字符串以整数的形式展示，可以作为数字操作使用</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#添加/修改数据</span>
+<span class="token builtin class-name">set</span> key value
+<span class="token comment">#获取数据</span>
+get key
+<span class="token comment">#删除</span>
+del key
+<span class="token comment"># 添加/修改多个</span>
+mset key1 value1 key2 value2
+<span class="token comment">#获取多个</span>
+mget key1 key2
+<span class="token comment">#获取字符串长度</span>
+strlen key
+<span class="token comment">#追加数据到值后面</span>
+append key value
+</code></pre></div><ul><li>string 类型的扩展操作
+<ul><li>string在redis内部就是个字符串，但是遇到incr、decr会转成数值运算</li> <li>redis所有操作都是原子性的，采用单线程处理所有请求，无需考虑并发数据一致性问题</li> <li>数值的操作时候，超过redis上限会报错（java中long.MAX_VALUE）</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 设置数值增加指定范围的值（可以解决mysql分表后主键唯一的问题）</span>
+incr key
+incrby key increment <span class="token comment">#指定步长</span>
+incrbyfloat key increment <span class="token comment">#可以加小数</span>
+<span class="token comment"># 设置数值减少指定范围的值</span>
+decr key
+decrby key increment
+</code></pre></div><ul><li>string 数据实效性设置</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#设置多少秒后实效</span>
+setex key seconds value
+<span class="token comment">#毫秒</span>
+psetex key milliseconds value
+</code></pre></div><ul><li>数据库中热点数据的key的命名规范
+<ul><li><code>emp:id:88395515:name</code> (表名:主键名:值:字段名)</li></ul></li> <li>应用场景
+<ul><li>mysql分表的sequence管理</li> <li>短信验证等5分钟时效过期</li></ul></li></ul> <h4 id="_2-hash哈希"><a href="#_2-hash哈希" class="header-anchor">#</a> 2.<strong>hash哈希</strong></h4> <ul><li>存储需求： 对一系列存储的数据进行编组，方便管理，典型应用存储对象信息</li> <li>需要的存储结构：一个存储空间保存多个键值对数据</li> <li>hash类型： 底层使用哈希表结构实现数据存储
+<ul><li>hash类型下的value只能存字符串，不允许其它结构</li> <li>每个hash可以存储2^32-1个键值对</li> <li>hash类型十分贴近对象的数据存储类型，并且可以灵活的增加删除对象属性，但hash设计初衷不是为了存大量对象而设计的，切记不可乱用，更不可将hash作为对象列表使用</li> <li>hgetall操作可以获取全部属性，如果内部field过多，遍历的整体效率会低，有可能成为数据访问的瓶颈</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#添加/修改数据</span>
+hset key field value
+<span class="token comment"># 获取数据</span>
+hget key field
+hgetall key
+<span class="token comment">#删除数据</span>
+hdel key field1
+
+<span class="token comment">#添加/修改多个数据</span>
+hmset key field1 value1 field2 value2
+<span class="token comment">#获取多个值</span>
+hmget key field1 field2
+<span class="token comment">#获取hash表中字段的数量</span>
+hlen key
+<span class="token comment">#获取hash表中是否存在指定字段</span>
+hexists key field1
+</code></pre></div><ul><li>hash扩展操作与使用注意</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#获取hash表中所有的field名</span>
+hkeys key
+<span class="token comment">#获取hash表中所有的value值</span>
+hvals key
+<span class="token comment">#指定字段的数值增加指定范围的值</span>
+hincrby key field incrment
+hincrbyfloat key filde incrment
+<span class="token comment">#如果没值set,有的话什么都不做(value不同也不操作)</span>
+hsetnx key field value
+</code></pre></div><ul><li><p>string的json字符串和hash存储区别</p> <ul><li>string的json读为主</li> <li>hash的存储可以灵活增减，适用数据修改较多情况</li></ul></li> <li><p>应用场景</p> <ul><li>用户购物车</li> <li>抢购</li></ul></li></ul> <h4 id="_3-list列表"><a href="#_3-list列表" class="header-anchor">#</a> 3.<strong>list列表</strong></h4> <ul><li>数据存储需求：存储多个数据，并对数据进入存储空间的顺序进行区分</li> <li>需要的数据结构： 一个存储空间保存多个数据，且通过数据体现进入的顺序</li> <li>list类型：保存多个数据，地层使用双向链表存储结构实现</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#添加/修改数据</span>
+lpush key value1 <span class="token punctuation">[</span>value2<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token comment">#左push,后lpush的在前面</span>
+rpush key value1 <span class="token punctuation">[</span>value2<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token comment">#右push，跟push顺序一致 </span>
+<span class="token comment">#获取数据</span>
+lrange key start stop <span class="token comment">#左开始读，start stop理解为开始-结束的index(0 -1看所有)</span>
+lindex key index <span class="token comment">#直接下标读取</span>
+llen key <span class="token comment">#获取长度</span>
+<span class="token comment">#获取并移除</span>
+lpop key <span class="token comment">#左边弹出1个</span>
+rpop key <span class="token comment">#右边弹出1个</span>
+<span class="token comment">#移除指定数据</span>
+lrem key count value <span class="token comment">#count是个数，list值有重复的情况</span>
+</code></pre></div><ul><li>list的阻塞数据获取</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#规定时间获取并移除数据</span>
+blpop key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token function">timeout</span>
+bropo key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token function">timeout</span>
+</code></pre></div><ul><li>list操作注意事项
+<ul><li>list中保存的都是string类型，值的个数也是2^32-1个</li> <li>list具有索引概念 。通常操作以队列形式出队入队，或以栈的形式出栈入栈</li> <li>获取全内容结束索引为-1</li> <li>list可以对数据分页操作，通常第一页走redis,后续页查询数据库</li></ul></li> <li>应用场景
+<ul><li>最新消息的展示</li></ul></li></ul> <h4 id="_4-set集合"><a href="#_4-set集合" class="header-anchor">#</a> 4.<strong>set集合</strong></h4> <ul><li>新的存储需求：存储大量数据，在查询方面更高效率</li> <li>需要的存储结构： 能够保存大量数据，高效的内部存储结构，便于查询</li> <li>对hash结构的变形，仅使用field的存储空间</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#添加数据</span>
+sadd key member1 <span class="token punctuation">[</span>member2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token comment">#获取全部</span>
+smembers key
+<span class="token comment">#删除数据</span>
+srem key member1 <span class="token punctuation">[</span>member2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token comment">#获取集合总量</span>
+scard key
+<span class="token comment">#判断集合中包含某元素</span>
+sismember key member1
+</code></pre></div><ul><li>set的随机取值删值操作
+<ul><li>业务场景 (随机推 ： 每位用户注册今日头条，都会让选择几项新闻类型，但是后期为了增加用户活跃度，必须让用户对其他类别逐渐产生兴趣，增加客户留存（随机取一定数量的热点类别加入到用户自己选择的类别中)</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#随机获取集合中指定数量的数据</span>
+srandmember key <span class="token punctuation">[</span>count<span class="token punctuation">]</span>
+<span class="token comment">#随机获取集合中某几个数据并移除集合</span>
+spop key   <span class="token punctuation">[</span>count<span class="token punctuation">]</span>     
+</code></pre></div><ul><li>set数据交并差操作
+<ul><li>业务场景（社交软件可能认识的人）</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#求两个set的交集、并集、差集</span>
+<span class="token comment"># 交集（权限set对权限去重）</span>
+sinter key1 key2
+<span class="token comment">#并集</span>
+sunion key1 key2
+<span class="token comment">#差集</span>
+<span class="token function">sdiff</span> key1 key2 <span class="token comment">#只查左边（key1）的差集</span>
+
+<span class="token comment">#求多个set的交集、并集、差集并存指定集合中</span>
+sinterstore destination key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+sunionstore destination key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+sdiffstore destination key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token comment">#将set中元素移动到另一个set中</span>
+smove <span class="token builtin class-name">source</span> destination menber
+</code></pre></div><ul><li>set操作注意事项
+<ul><li>set类型不允许值重复</li> <li>set虽然和hash存储结构相同，但是无法使用hash中的存储value的空间</li></ul></li></ul> <h4 id="_5-sorted-set有序集合"><a href="#_5-sorted-set有序集合" class="header-anchor">#</a> 5.<strong>sorted_set有序集合</strong></h4> <ul><li>新的存储需求：数据排序有利于数据有效展示，需要提供一个根据自身特征进行排序的方式</li> <li>sorted_set：在set的基础上，增加了可排序字段</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#添加数据 （score是排序的规则顺序）</span>
+zadd key score1 member1 <span class="token punctuation">[</span>score2 member2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token comment">#获取全部数据</span>
+zrange key start stop <span class="token punctuation">[</span>WITHSCORES<span class="token punctuation">]</span> <span class="token comment">#带上withscores参数，会显示score</span>
+zrevrange key start stop <span class="token punctuation">[</span>WITHSCORES<span class="token punctuation">]</span> <span class="token comment">#反转显示 </span>
+<span class="token comment">#删除数据</span>
+zrem key member <span class="token punctuation">[</span>menber1<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+
+<span class="token comment">#按score值范围获取数据</span>
+zrangebyscore key min max <span class="token punctuation">[</span>WITHSCORES<span class="token punctuation">]</span> <span class="token punctuation">[</span>LIMIT<span class="token punctuation">]</span>  <span class="token comment">#limit和mysql用法一样，筛选前几位</span>
+zrevrangebyscore key max min <span class="token punctuation">[</span>WITHSCORES<span class="token punctuation">]</span> <span class="token punctuation">[</span>LIMIT<span class="token punctuation">]</span>
+<span class="token comment">#按索引删除</span>
+zremrangebyrank key start stop 
+<span class="token comment">#按score值删除数据</span>
+zremrangebyscore key min max
+
+<span class="token comment">#获取集合总数</span>
+zcard key
+zcount key min max <span class="token comment">#score范围count</span>
+
+<span class="token comment">#集合交集、并集 #score 会求和</span>
+zinterstore destination numkeys key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span> 
+zunionstore destination numkeys key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre></div><ul><li>sorted_set扩展操作
+<ul><li>业务场景：各类榜单排名，根据score排序，根据score值顺序来获取值的索引</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#获取数据对应的索引</span>
+zrank key member
+zrevrank key menber
+
+zscore key member <span class="token comment">#获取score值</span>
+zincrby key increment member <span class="token comment">#score值的修改</span>
+</code></pre></div><ul><li>sorted_set注意事项
+<ul><li>score可以保存整数和小数（双精度double），小数可能有精度问题</li> <li>sorted_set地层还是set，其值不能重复，重复后一次覆盖前一次</li> <li>score比较需要位数一致，否则可能不准确，不足的可以补0</li></ul></li></ul> <h3 id="通用命令"><a href="#通用命令" class="header-anchor">#</a> 通用命令</h3> <h4 id="_1-key通用命令"><a href="#_1-key通用命令" class="header-anchor">#</a> 1.key通用命令</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#删除</span>
+del key
+<span class="token comment">#key是否存在</span>
+exists key
+<span class="token comment">#根据key获取数据类型</span>
+<span class="token builtin class-name">type</span> key
+
+<span class="token comment">#为key设置时效</span>
+expire key seconds
+pexpire key milliseconds
+expireat key timstaamp
+pexpireat key milliseconds timstaamp
+
+<span class="token comment">#获取key的有效时间</span>
+ttl key
+pttl key <span class="token comment">#毫秒</span>
+
+<span class="token comment">#切换key从有时效变为永久件</span>
+persist key
+
+<span class="token comment">#key的扩展操作 keys pattern</span>
+keys * <span class="token comment">#查询所有</span>
+keys it* <span class="token comment">#it开头的key</span>
+keys *it  <span class="token comment">#it结尾的key</span>
+keys ??it <span class="token comment">#前两个字符随意，后面it结尾</span>
+keys user:? <span class="token comment">#查询user:开头，后一个字符随意</span>
+keys u<span class="token punctuation">[</span>st<span class="token punctuation">]</span>er <span class="token comment">#查询u开头，er结尾，中间一个值为s或t</span>
+</code></pre></div><h4 id="_2-数据库通用命令"><a href="#_2-数据库通用命令" class="header-anchor">#</a> 2.数据库通用命令</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#redis使用过程中，如果数据不区分种类、类别，可能会出现key重复的情况.</span>
+<span class="token comment">#解决方案：redis为每个服务提供16个数据库，编号从0-15，每个数据库之间相互独立</span>
+
+<span class="token comment">#切换数据库</span>
+<span class="token keyword">select</span> index  <span class="token comment">#0-15  </span>
+<span class="token comment">#把本库数据移动到</span>
+move key index
+<span class="token comment">#数据清除</span>
+dbsize <span class="token comment">#数据库大小</span>
+flushdb <span class="token comment">#清除本编号内的内容</span>
+flushall <span class="token comment">#清除所有</span>
+</code></pre></div><div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#其他操作</span>
+quit
+<span class="token function">ping</span>
+<span class="token builtin class-name">echo</span> message
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/lidagen.github.io/guide/vue/byValue.html" class="prev">
+        vue 常用传值
+      </a></span> <span class="next"><a href="/lidagen.github.io/nosql/redis2.html">
+        Redis高级
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/lidagen.github.io/assets/js/app.c01dd52b.js" defer></script><script src="/lidagen.github.io/assets/js/2.cf33694f.js" defer></script><script src="/lidagen.github.io/assets/js/99.6da6fada.js" defer></script>
+  </body>
+</html>
