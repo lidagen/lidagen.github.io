@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Shell解析器 | GEN</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/lidagen.github.io/favicon.ico">
+    <meta name="description" content="积跬步。">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    <link rel="preload" href="/lidagen.github.io/assets/css/styles.styles.c94ac4bb.css" as="style"><link rel="preload" href="/lidagen.github.io/assets/js/app.25c904a4.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/4.4bbfa83e.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/2.c31ab677.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/0.d2c14809.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/1.22d17cb2.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/3.658c3bd0.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/146.90a29b91.js" as="script"><link rel="prefetch" href="/lidagen.github.io/assets/js/10.4ab11789.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/100.f220410c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/101.4b021d84.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/102.70c87a9a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/103.c8fdfcb8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/104.5f458458.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/105.bfdffd8a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/106.c2da52ff.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/107.32157a2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/108.f9a4890d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/109.d2f26662.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/11.ecf6f195.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/110.e6ef7eb7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/111.31e326a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/112.0e8de5ee.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/113.1e89f4b5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/114.8415d505.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/115.4449bf0e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/116.01a5abf1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/117.cd4c7345.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/118.1c925587.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/119.9999b12c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/12.fdbc4c9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/120.45d73bb0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/121.b20712f4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/122.60fe00a0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/123.e6bfc091.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/124.a0abb92a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/125.f1f26892.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/126.0e5e04ef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/127.8cab743f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/128.7602cfe5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/129.7b59d497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/13.6c3f9c8f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/130.b4eb1a48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/131.5985e177.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/132.6228204b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/133.ec876179.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/134.c5f25c0e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/135.ee6cf3a2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/136.188e6f28.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/137.97bb3bc8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/138.7d595d6c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/139.5b286381.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/14.ccee4a29.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/140.6889ffe3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/141.067b5bd3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/142.f9b0f4b2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/143.7ea1775f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/144.faa6c1be.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/145.868de2ca.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/147.32c8a0ff.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/148.9f6c501a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/149.fed428b8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/15.1df58668.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/150.b6141f66.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/151.848276ba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/152.e78045bc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/153.8403f74d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/154.d0b68d6b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/155.c35a9905.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/156.c9f791b6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/157.b87738b3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/158.94d067c9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/159.8affcd62.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/16.dd6cc40d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/160.47bbad1d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/161.bc8be01d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/162.f0f7f43a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/163.447d7f37.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/164.c8219729.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/165.4b832d4a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/166.7ceae1e9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/167.b27a106b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/168.eb6d2b6a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/17.9972d5e8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/18.8af3c2d8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/19.342c0a4d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/20.2bc21ea8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/21.d0c64065.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/22.db7aa5eb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/23.ba9f4d95.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/24.86039916.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/25.32f421ae.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/26.8f4e62dc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/27.543281e8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/28.847dd410.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/29.25044e74.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/30.6717f4a1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/31.fe0c5b36.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/32.1d1cbd6f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/33.5e0afca6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/34.4a4a318a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/35.e1b28c5a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/36.507f4cc9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/37.76b0dc42.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/38.1e31adac.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/39.44b90642.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/40.22ca848c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/41.55d5cd68.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/42.80eb6ca9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/43.4a4b18cb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/44.14935c71.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/45.a5911402.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/46.d1bb6264.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/47.ca766087.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/48.6eee35b0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/49.ecefb372.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/5.aed786b1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/50.758969b3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/51.90efcb14.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/52.c48ca7d0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/53.78ead7a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/54.e66d4160.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/55.ccdbc7bd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/56.fe3a5d48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/57.32b8c75b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/58.36f73b47.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/59.8167eeba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/6.65da5388.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/60.c595391b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/61.cb910183.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/62.49a88a57.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/63.9051fa25.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/64.8b973503.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/65.3398ca5e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/66.b7acfeb5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/67.8059fa0c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/68.8deee2b5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/69.4a9f3779.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/7.1c709b2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/70.78ee170e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/71.9bed63d6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/72.93529003.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/73.da42caf4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/74.6f889fee.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/75.3751b68d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/76.64cdbaef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/77.521a5c20.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/78.77236b3a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/79.9d6bd623.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/8.bf230371.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/80.767486cd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/81.f9c5ca48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/82.996169a8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/83.412d6719.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/84.348758f2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/85.34072d20.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/86.a9d34b59.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/87.f30f79f3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/88.d91f1ad0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/89.5aa2c904.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/9.39560794.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/90.ff4f0371.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/91.5abe6039.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/92.95763647.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/93.f3701adb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/94.5237fae2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/95.cd45b53e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/96.e9e0d6a2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/97.dc35f4f0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/98.06cba60d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/99.4c63077f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/vendors~docsearch.80fd3e2e.js">
+    <link rel="stylesheet" href="/lidagen.github.io/assets/css/styles.styles.c94ac4bb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lidagen.github.io/" class="home-link router-link-active"><img src="/lidagen.github.io/img/1.jpg" alt="GEN" class="logo"> <span class="site-name can-hide">GEN</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂" class="mobile-dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/build/dockerAliyun.html" class="nav-link">
+  docker aliyun配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow down"></span></button> <button type="button" aria-label="link" class="mobile-dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂" class="mobile-dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/build/dockerAliyun.html" class="nav-link">
+  docker aliyun配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow down"></span></button> <button type="button" aria-label="link" class="mobile-dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA WEB</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DATABASE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SpringCloud</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>中间件</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境部署</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>读书笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VUE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NoSQL</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>MQ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JVM</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JUC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Shell</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lidagen.github.io/shell/shell.html" class="sidebar-link">shell命令</a></li><li><a href="/lidagen.github.io/shell/shell1.html" aria-current="page" class="active sidebar-link">shell基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#shell解析器" class="sidebar-link">Shell解析器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#linux-提供的解析器" class="sidebar-link">Linux 提供的解析器</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#shell入门" class="sidebar-link">Shell入门</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#shell-多命令处理" class="sidebar-link">Shell  多命令处理</a></li></ul></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#shell中的变量" class="sidebar-link">Shell中的变量</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#系统变量-环境变量" class="sidebar-link">系统变量(环境变量)</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#自定义变量" class="sidebar-link">自定义变量</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#特殊变量" class="sidebar-link">特殊变量</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#运算符" class="sidebar-link">运算符</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#条件判断" class="sidebar-link">条件判断</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#if判断" class="sidebar-link">if判断</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#case语句" class="sidebar-link">case语句</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#for循环" class="sidebar-link">for循环</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#while循环" class="sidebar-link">while循环</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#read读取控制台输入" class="sidebar-link">read读取控制台输入</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#函数" class="sidebar-link">函数</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell1.html#shell工具" class="sidebar-link">shell工具</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Activiti</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Kubernetes</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="shell解析器"><a href="#shell解析器" class="header-anchor">#</a> Shell解析器</h2> <h3 id="linux-提供的解析器"><a href="#linux-提供的解析器" class="header-anchor">#</a> Linux 提供的解析器</h3> <div class="language- extra-class"><pre class="language-text"><code>~ cat /etc/shells                              
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/usr/bin/sh
+/bin/dash
+/usr/bin/dash
+/bin/zsh
+/usr/bin/zsh
+</code></pre></div><h4 id="查询默认解析器"><a href="#查询默认解析器" class="header-anchor">#</a> 查询默认解析器</h4> <div class="language- extra-class"><pre class="language-text"><code>➜  ~ echo $SHELL                                                
+/usr/bin/zsh
+
+</code></pre></div><h3 id="shell入门"><a href="#shell入门" class="header-anchor">#</a> Shell入门</h3> <h4 id="声明-编写helloworld"><a href="#声明-编写helloworld" class="header-anchor">#</a> 声明 编写helloworld</h4> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+echo &quot;hello world&quot;
+</code></pre></div><h4 id="赋权"><a href="#赋权" class="header-anchor">#</a> 赋权</h4> <div class="language- extra-class"><pre class="language-text"><code>chmod +x helloworld.sh 
+</code></pre></div><h4 id="执行"><a href="#执行" class="header-anchor">#</a> 执行</h4> <div class="language- extra-class"><pre class="language-text"><code># bash 或者sh都性
+
+bash helloworld.sh #也可绝对路径
+</code></pre></div><h3 id="shell-多命令处理"><a href="#shell-多命令处理" class="header-anchor">#</a> Shell  多命令处理</h3> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+touch xx/readme.txt
+
+echo &quot;create and write txt&quot; &gt;&gt; readme.txt
+</code></pre></div><h2 id="shell中的变量"><a href="#shell中的变量" class="header-anchor">#</a> Shell中的变量</h2> <h3 id="系统变量-环境变量"><a href="#系统变量-环境变量" class="header-anchor">#</a> 系统变量(环境变量)</h3> <ul><li>作用域是整个操作系统或整个用户</li></ul> <h4 id="常用系统变量"><a href="#常用系统变量" class="header-anchor">#</a> 常用系统变量</h4> <div class="language- extra-class"><pre class="language-text"><code>$HOME 、$PWD 、$SHELL 、$USER 等
+</code></pre></div><h4 id="查看系统变量值"><a href="#查看系统变量值" class="header-anchor">#</a> 查看系统变量值</h4> <div class="language- extra-class"><pre class="language-text"><code>echo $HOME
+</code></pre></div><h4 id="显示当前shell中所有变量-set"><a href="#显示当前shell中所有变量-set" class="header-anchor">#</a> 显示当前Shell中所有变量 set</h4> <div class="language- extra-class"><pre class="language-text"><code>set
+</code></pre></div><h3 id="自定义变量"><a href="#自定义变量" class="header-anchor">#</a> 自定义变量</h3> <ul><li>自定义普通变量
+<ul><li>作用域为当前shell（当前解释器）</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+A=100
+B=&quot;hello world&quot;
+
+echo $A
+echo $B     
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code># 命令行
+export PATH=${GRADLE_HOME}/bin:${PATH}
+</code></pre></div><ul><li>自定义环境变量</li></ul> <div class="language- extra-class"><pre class="language-text"><code>vi /etc/profile
+export PATH=${GRADLE_HOME}/bin:${PATH}
+
+</code></pre></div><h4 id="普通变量基本语法"><a href="#普通变量基本语法" class="header-anchor">#</a> 普通变量基本语法</h4> <ul><li>定义变量： 变量= 值</li> <li>撤销变量： unset 变量</li> <li>声明静态变量： readonly变量， 注意不能unset,也不可reset</li></ul> <h4 id="变量定义规则"><a href="#变量定义规则" class="header-anchor">#</a> 变量定义规则</h4> <ul><li>变量名称可以字母、数字、下划线组成，但不能数字开头，环境变量建议大写</li> <li>等号两侧不可以有空格</li> <li>在bash中，变量默认都是字符串类型，不能进行数值运算</li> <li>变量的值如果有空格，需要用双引号或单引号括起来</li></ul> <h3 id="特殊变量"><a href="#特殊变量" class="header-anchor">#</a> 特殊变量</h3> <h4 id="特殊变量-n"><a href="#特殊变量-n" class="header-anchor">#</a> 特殊变量 $n</h4> <ul><li>基本语法： n为数字，$0代表该脚本名称，$1-$9代表第一到第9个参数，10个以上参数需要用大括号，如${10}</li> <li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+# 给脚本传入三个参数
+
+echo $1
+echo $2
+echo $3
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>bash _04_.sh 111 abc AAA
+</code></pre></div><h4 id="特殊变量-2"><a href="#特殊变量-2" class="header-anchor">#</a> 特殊变量 $#</h4> <ul><li>基本语法： 获取所有输入参数个数，常用于循环</li> <li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+echo &quot;$0 $1 $2&quot;
+echo $#
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>bash _05_.sh 11 aa BB 
+
+</code></pre></div><h4 id="特殊变量-和"><a href="#特殊变量-和" class="header-anchor">#</a> 特殊变量 $* 和 $@</h4> <ul><li>基本语法：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>+  $* 这个变量代表命令行中所有参数，$*把所有参数看称一个整体
++  $@ 这个变量也代表命令行中所有参数，不过$@把每个参数区分对待 
+</code></pre></div><ul><li>举例 for循环中都加了双引号,如果不加，两者一样</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#/bin/bash
+
+# 测试%*
+
+for i in &quot;$*&quot;;do
+        echo &quot;传入参数是：$i&quot;
+done
+
+
+echo &quot;----------------------------------------&quot;
+# 测试$@
+
+for j in &quot;$@&quot;;do
+        echo &quot;传入参数是：$j&quot;
+done
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>output
+bash _forEach4.sh abc 123
+传入参数是：abc 123
+----------------------------------------
+传入参数是：abc
+传入参数是：123
+</code></pre></div><h4 id="特殊变量-3"><a href="#特殊变量-3" class="header-anchor">#</a> 特殊变量 $?</h4> <ul><li>基本语法： 最后一次执行命令返回状态，如果变量值为0,证明上一个命令正确，如果非0,证明上一个命令执行不正确</li></ul> <h3 id="运算符"><a href="#运算符" class="header-anchor">#</a> 运算符</h3> <h4 id="基本语法"><a href="#基本语法" class="header-anchor">#</a> 基本语法</h4> <div class="language- extra-class"><pre class="language-text"><code>+ $((运算式)) 或 $[运算式]
++  expr + 、- 、*、/、%
+</code></pre></div><ul><li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code># terminat
+# 计算加空格，赋值加反引号
+➜  shRepo D=`expr 2 + 8` 
+➜  shRepo echo $D   
+10
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code># 脚本, 计算有三种写法
+#!/bin/bash
+
+A=100
+B=20
+
+#写法1
+C=$((A+B))
+
+#写法2
+C=$[A+B]
+
+#写法3
+C=`expr $A + $B`
+
+
+#综合运算 （2+3）*5
+
+D=$[(2+3)*5]
+echo $C
+echo $D       
+
+</code></pre></div><h3 id="条件判断"><a href="#条件判断" class="header-anchor">#</a> 条件判断</h3> <h4 id="【condition】-condition前后都有空格"><a href="#【condition】-condition前后都有空格" class="header-anchor">#</a> 【condition】 condition前后都有空格</h4> <div class="language- extra-class"><pre class="language-text"><code>+ 整数比较
+== 字符串比较
+-lt 小于(less than)    -le 小于或等于（less equal）
+-eq 等于               -gt 大于
+-ge 大于等于            -ne 不等于
+
++ 文件权限判断
+-r 只读权限  -w写权限
+-x 执行权限
+
++ 文件类型判断
+-f 文件存在且是一个常规文件（file）
+-e 文件存在
+-d 文件存在并是一个目录（directry）
+</code></pre></div><h4 id="常用判断条件"><a href="#常用判断条件" class="header-anchor">#</a> 常用判断条件</h4> <ul><li>两个整数比较</li></ul> <div class="language- extra-class"><pre class="language-text"><code>
+#!/bin/bash
+# 传入参数 &gt; 2输出 param gt 2
+# &amp;&amp; 逻辑与
+[ $# -gt 2 ] &amp;&amp; echo &quot;param gt 2&quot;
+
+</code></pre></div><h3 id="if判断"><a href="#if判断" class="header-anchor">#</a> if判断</h3> <h4 id="语法"><a href="#语法" class="header-anchor">#</a> 语法</h4> <ul><li>条件判断式中必须有空格</li> <li>if后有空格</li></ul> <div class="language- extra-class"><pre class="language-text"><code>if [ 条件判断式 ]； then
+	程序
+fi	
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>if [ 条件判断式 ]
+	then
+		 程序
+fi		 
+</code></pre></div><ul><li>举例 （-a 是并且的意思）</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+if [ $1 -lt 18 ];then
+       echo &quot;未成年&quot;
+elif [ $1 -ge 18 -a $1 -le 35 ];then
+       echo &quot;青年&quot;
+else
+       echo &quot;中老年&quot;   
+fi
+
+
+</code></pre></div><h3 id="case语句"><a href="#case语句" class="header-anchor">#</a> case语句</h3> <h4 id="语法-2"><a href="#语法-2" class="header-anchor">#</a> 语法</h4> <ul><li>case行尾必须为单词in，每个模式匹配必须为）结束</li> <li>双分号；；表示序列结束，相当java的break</li> <li>*) 相当于java中的daulft</li></ul> <div class="language- extra-class"><pre class="language-text"><code>case $变量名 in
+	&quot;值1&quot;）
+	；；
+	&quot;值2&quot;）
+	；；
+esac		
+</code></pre></div><ul><li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+case $1 in
+        &quot;A&quot;)
+                echo &quot;exec A&quot;
+        ;;
+
+        &quot;B&quot;)
+                echo &quot;exec B&quot;
+        ;;
+        *)
+                echo &quot;exec other&quot;
+        ;;
+esac
+
+</code></pre></div><h3 id="for循环"><a href="#for循环" class="header-anchor">#</a> for循环</h3> <h4 id="语法1"><a href="#语法1" class="header-anchor">#</a> 语法1</h4> <div class="language- extra-class"><pre class="language-text"><code>for((初始值；循环控制条件；变量变化))
+do
+	程序
+done	
+</code></pre></div><ul><li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+for((i=0;i&lt;=100;i++));do
+        s=$[$s+$i]
+done
+
+echo &quot;sum 1..100 = $s&quot;
+~                        
+</code></pre></div><h4 id="语法2"><a href="#语法2" class="header-anchor">#</a> 语法2</h4> <div class="language- extra-class"><pre class="language-text"><code>for 变量 in 值1 值2 值3 ...
+do
+	程序
+done	
+</code></pre></div><ul><li>举例 (1..100)代表1-100 ，或者用 seq 1 100</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+#for i in {1..100};do
+for i in `seq 1 100`;do
+        s=$[$s+$i]
+done
+
+echo &quot;sum 1..100 bash 2 = s&quot;
+
+</code></pre></div><ul><li>操作文件列表</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+for i in `ls /home/wangs/Documents/shRepo`;do
+        echo $i
+done
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+target_dir=&quot;/home/wangs/Documents/shRepo&quot;
+target_file=&quot;readme.sh&quot;
+
+for file in &quot;$target_dir&quot;/*;do
+         if [ &quot;$(basename &quot;$file&quot;)&quot; = &quot;$target_file&quot; ]; then
+                echo &quot;i get the readme file&quot;
+
+        fi
+done
+</code></pre></div><h3 id="while循环"><a href="#while循环" class="header-anchor">#</a> while循环</h3> <h4 id="基本语法-2"><a href="#基本语法-2" class="header-anchor">#</a> 基本语法</h4> <div class="language- extra-class"><pre class="language-text"><code>while [条件判断式]
+do
+	程序
+done	
+</code></pre></div><ul><li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+i=1
+sum=0
+while [ $i -le 100 ];do
+        let sum=sum+i # 也等于 sum=$[ $sum+$i ]
+        let i++
+done
+
+echo &quot;sum = $sum&quot;
+
+</code></pre></div><h3 id="read读取控制台输入"><a href="#read读取控制台输入" class="header-anchor">#</a> read读取控制台输入</h3> <h4 id="基本语法-3"><a href="#基本语法-3" class="header-anchor">#</a> 基本语法</h4> <div class="language- extra-class"><pre class="language-text"><code>read(选项)（参数）
+选项：
+-p : 指定读取值时的提示符
+-t : 制定读取值时等待的时间（秒）
+
+参数
+	变量：制定读取值的变量名
+</code></pre></div><ul><li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+read -t 7 -p &quot;enter input a integer gt 1 within 7 seconds&quot; NUM
+
+for ((i=1;i&lt;=$NUM;i++));do
+        s=$[$s+$i]
+done
+
+echo $s
+
+</code></pre></div><h3 id="函数"><a href="#函数" class="header-anchor">#</a> 函数</h3> <h4 id="系统函数"><a href="#系统函数" class="header-anchor">#</a> 系统函数</h4> <h5 id="basename-语法、"><a href="#basename-语法、" class="header-anchor">#</a> basename 语法、</h5> <ul><li>basename string/pathname ,该命令会删掉所有的前缀包括最后一个‘/’字符，然后将字符串显示出来</li> <li>选项：
+<ul><li>suffix为后缀，如果suffi被制定了，basename将pathname或string中的suffix去掉</li></ul></li> <li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>basename /home/wangs/Documents/shRepo/readme.sh
+#输出
+readme.sh
+
+basename /home/wangs/Documents/shRepo/readme.sh .sh 
+#输出
+readme
+
+</code></pre></div><h5 id="dirname语法"><a href="#dirname语法" class="header-anchor">#</a> dirname语法</h5> <ul><li>dirnname文件绝对路径</li> <li>举例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>dirname /home/wangs/Documents/shRepo/readme.sh         
+# 输出
+/home/wangs/Documents/shRepo
+
+</code></pre></div><h4 id="自定义函数"><a href="#自定义函数" class="header-anchor">#</a> 自定义函数</h4> <ul><li>必须在调用函数地方之前，先声明函数，shell脚本是逐行运行，不会提前编译</li> <li>函数返回值，只能通过$?系统变量获取，可以显式加 return返回，如果不加，将以最后一行运行结果作为返回值返回。return后跟数值n（0-255）</li> <li>可以参用标准输出：echo来作为函数返回值</li></ul> <h5 id="基本语法-4"><a href="#基本语法-4" class="header-anchor">#</a> 基本语法</h5> <div class="language- extra-class"><pre class="language-text"><code>function functionname(){
+	Action;
+	[return int;]
+}
+
+functionname
+</code></pre></div><ul><li>举例
+<ul><li>100 + 200 超过255了，下列例子会返回44</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+function sum(){
+        let s=$1+$2
+
+        return $s
+}
+
+sum 100 200
+
+echo &quot;sum= $?&quot;
+
+</code></pre></div><ul><li>返回300的写法</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+function sum(){
+        let s=$1+$2
+
+        echo $s
+}
+
+result=`sum 100 200`
+
+echo &quot;sum= $result&quot;
+
+</code></pre></div><h3 id="shell工具"><a href="#shell工具" class="header-anchor">#</a> shell工具</h3> <h4 id="cut"><a href="#cut" class="header-anchor">#</a> cut</h4> <ul><li>cut工作就是“剪”，具体说就是在文件中负责剪切数据用的，cut命令从文件的每一行剪切字节，字符和字段并将其输出</li></ul> <h5 id="基本用法"><a href="#基本用法" class="header-anchor">#</a> 基本用法</h5> <div class="language- extra-class"><pre class="language-text"><code>cut [选项参数] filename
+说明：默认分割符是制表符
+</code></pre></div><h5 id="选项参数说明"><a href="#选项参数说明" class="header-anchor">#</a> 选项参数说明</h5> <div class="language- extra-class"><pre class="language-text"><code>-f 列号
+-d 分割符
+</code></pre></div><h6 id="举例"><a href="#举例" class="header-anchor">#</a> 举例</h6> <ul><li>准备工作 vim cut.txt</li></ul> <div class="language- extra-class"><pre class="language-text"><code>dong shen
+guan shen
+wo wo
+lai lai
+le le
+~       
+</code></pre></div><ul><li>按列分割
+<ul><li>&quot;  &quot;按空格分割</li> <li>-f1指第一列，可以选-f2或 -f1,2</li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>cut -d &quot; &quot; -f1 cut.txt
+
+
+#输出
+dong
+guan
+wo
+lai
+le
+</code></pre></div><h4 id="sed"><a href="#sed" class="header-anchor">#</a> sed</h4> <ul><li>sed是一种流编辑器，它一次处理一行内容，处理时，把当前处理的行存储在临时缓冲区，称为“模式空间”，接着用sed命令处理缓冲区的内容，处理完成后，把缓冲区内容送往屏幕，接着处理下一行这样不断重复，直到文件末尾，文件内容并没有改变，除非你使用重定向存储输出</li></ul> <h5 id="基本用法-2"><a href="#基本用法-2" class="header-anchor">#</a> 基本用法</h5> <div class="language- extra-class"><pre class="language-text"><code>sed [选项参数] ‘command' filename
+</code></pre></div><h5 id="选项参数说明-2"><a href="#选项参数说明-2" class="header-anchor">#</a> 选项参数说明</h5> <div class="language- extra-class"><pre class="language-text"><code>-e 直接在指令模式上进行sed的动作编辑
+</code></pre></div><h5 id="命令功能描述"><a href="#命令功能描述" class="header-anchor">#</a> 命令功能描述</h5> <div class="language- extra-class"><pre class="language-text"><code>a 新增， a后面可以接字串，在下一行出现
+d 删除
+s 查找并替换
+</code></pre></div><h6 id="举例-2"><a href="#举例-2" class="header-anchor">#</a> 举例</h6> <ul><li>准备工作 vim sed.txt</li></ul> <div class="language- extra-class"><pre class="language-text"><code>dong shen
+guan shen
+wo wo
+lai lai
+le le
+</code></pre></div><ul><li>使用命令</li></ul> <div class="language- extra-class"><pre class="language-text"><code>#在第一行后面加入hello world
+sed '1a hello world' sed.txt
+# 删除第一行
+sed '1d' sed.txt
+# 查找wo并删除
+sed '/wo/d' sed.txt
+# 替换wo为 AA,只替换第一个
+sed 's/wo/AA/' sed.txt
+# 替换所有 g=global
+sed 's/wo/AA/g' sed.txt
+
+# 多个操作,删除第一行并把全局wo替换为AA
+sed -e '3d' -e 's/wo/AA/g' sed.txt
+
+</code></pre></div><h4 id="awk"><a href="#awk" class="header-anchor">#</a> awk</h4> <ul><li>一个强大文本分析工具，把文件逐行读入，以空格为默认分割符进行切片，切开部分再进行分析处理</li></ul> <h5 id="基本用法-3"><a href="#基本用法-3" class="header-anchor">#</a> 基本用法</h5> <div class="language- extra-class"><pre class="language-text"><code>awk [选项参数] `pattern1{action1} pattern2{action2}...` filname
+
+pattern: 表示awk再数据中查找的内容，就是匹配模式
+action: 在找到的匹配内容时所执行的一系列命令
+</code></pre></div><h5 id="参数选项说明"><a href="#参数选项说明" class="header-anchor">#</a> 参数选项说明</h5> <div class="language- extra-class"><pre class="language-text"><code>-F 指定输入文件拆分分割符
+-v 赋值一个用户定义变量
+</code></pre></div><h6 id="举例-3"><a href="#举例-3" class="header-anchor">#</a> 举例</h6> <ul><li>准备工作</li></ul> <div class="language- extra-class"><pre class="language-text"><code>cp /etc/passwd ~/Docu
+</code></pre></div><ul><li>使用命令</li></ul> <div class="language- extra-class"><pre class="language-text"><code># 指定：为分割符，打印passwd 第一列 第二列,用，分割
+awk -F: '{print $1,$2}' passwd 
+
+# 查询包含wangs的用户，打印1 7列
+awk -F: '/^wangs/ {print $1,$7}' passwd
+
+
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/lidagen.github.io/shell/shell.html" class="prev">
+        shell命令
+      </a></span> <span class="next"><a href="/lidagen.github.io/activiti/act1.html">
+        IDEA下的Activiti HelloWord
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/lidagen.github.io/assets/js/app.25c904a4.js" defer></script><script src="/lidagen.github.io/assets/js/4.4bbfa83e.js" defer></script><script src="/lidagen.github.io/assets/js/2.c31ab677.js" defer></script><script src="/lidagen.github.io/assets/js/0.d2c14809.js" defer></script><script src="/lidagen.github.io/assets/js/1.22d17cb2.js" defer></script><script src="/lidagen.github.io/assets/js/3.658c3bd0.js" defer></script><script src="/lidagen.github.io/assets/js/146.90a29b91.js" defer></script>
+  </body>
+</html>

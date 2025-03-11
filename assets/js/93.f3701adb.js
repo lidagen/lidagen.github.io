@@ -1,0 +1,72 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[93],{
+
+/***/ "../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/cache-loader/dist/cjs.js?{\"cacheDirectory\":\"../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/@vuepress/core/node_modules/.cache/vuepress\",\"cacheIdentifier\":\"8c2f02a4-vue-loader-template\"}!../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib/loaders/templateLoader.js?!../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/cache-loader/dist/cjs.js?!../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib/index.js?!../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/@vuepress/markdown-loader/index.js?!./docs/jvm/jvm3.md?vue&type=template&id=5c07bee8":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/wangs/.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/@vuepress/core/node_modules/.cache/vuepress","cacheIdentifier":"8c2f02a4-vue-loader-template"}!/home/wangs/.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/home/wangs/.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/cache-loader/dist/cjs.js??ref--1-0!/home/wangs/.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib??ref--1-1!/home/wangs/.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/@vuepress/markdown-loader??ref--1-2!./docs/jvm/jvm3.md?vue&type=template&id=5c07bee8 ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ContentSlotsDistributor',{attrs:{"slot-key":_vm.$parent.slotKey}},[_c('h2',{attrs:{"id":"gc-分代收集算法"}},[_c('a',{staticClass:"header-anchor",attrs:{"href":"#gc-分代收集算法"}},[_vm._v("#")]),_vm._v(" GC 分代收集算法")]),_vm._v(" "),_c('img',{attrs:{"src":_vm.$withBase('/jvm/sf.png'),"alt":"dock"}}),_vm._v(" "),_c('ul',[_c('li',[_vm._v("JVM在进行GC时，并非每次都对三个（对于jdk8来说是两个）区域（Young、Old、Prem）一起回收的，大部分回收是指新生代。")]),_vm._v(" "),_c('li',[_vm._v("因此GC分为两种GC，一种是普通GC（minor GC）,一种是全局GC（major GC或 Full GC）")])]),_vm._v(" "),_c('h3',{attrs:{"id":"minor-gc-和-full-gc区别"}},[_c('a',{staticClass:"header-anchor",attrs:{"href":"#minor-gc-和-full-gc区别"}},[_vm._v("#")]),_vm._v(" Minor GC 和 Full GC区别")]),_vm._v(" "),_c('ul',[_c('li',[_vm._v("Minor GC :直针对新生代区域的GC，因为一般java对象存活率不高，所以Minor GC频率非常频繁，一般回收速度较快")]),_vm._v(" "),_c('li',[_vm._v("Full GC ：指发生在老年代的垃圾回收动作，出现了Full GC,通常会伴随至少一次的Minor GC(但不是绝对)。Full GC的速度一般比Minor GC满10倍以上。")])]),_vm._v(" "),_c('h3',{attrs:{"id":"引用计数法"}},[_c('a',{staticClass:"header-anchor",attrs:{"href":"#引用计数法"}},[_vm._v("#")]),_vm._v(" 引用计数法")]),_vm._v(" "),_c('ul',[_c('li',[_vm._v("一个对象可能有多个地方引用，如果有引用就+1,没有就-1，当引用 =0的时候，证明没有被引用，会被回收。")]),_vm._v(" "),_c('li',[_vm._v("优点：速度快，效率高")]),_vm._v(" "),_c('li',[_vm._v("缺点：\n"),_c('ul',[_c('li',[_vm._v("每次对对象赋值都要维护一个计数器，且计数器也有一定消耗")]),_vm._v(" "),_c('li',[_vm._v("较难处理循环引用问题（类似死锁）")])])]),_vm._v(" "),_c('li',[_vm._v("JVM实现一般不采用这种方式")])]),_vm._v(" "),_c('h3',{attrs:{"id":"复制算法-copying"}},[_c('a',{staticClass:"header-anchor",attrs:{"href":"#复制算法-copying"}},[_vm._v("#")]),_vm._v(" 复制算法 Copying")]),_vm._v(" "),_c('ul',[_c('li',[_vm._v("Minor GC使用的就是"),_c('code',[_vm._v("复制算法Copying")])]),_vm._v(" "),_c('li',[_vm._v("为什么：\n"),_c('ul',[_c('li',[_vm._v("Minor GC会把Eden区所有活着的对象放到Survivor区，如果放不下就会放入Old Gen，也即一旦收集后，Eden区就会变成空的。")]),_vm._v(" "),_c('li',[_vm._v("当一个对象在Eden区出生后，经过依次MinorGC后还存活，并且能够被另一块Survivor容纳，则使用"),_c('strong',[_vm._v("复制算法")]),_vm._v("将这些存活的对象复制到另一个Survivor区（to区），然后清理所使用过的Eden区和Survivor区（from区），并将这些存活对象年龄+1，以后梅熬过依次MinorGC的对象，年龄都会+1，当对象年龄到达一个阈值（默认15，通过-XX:MaxtenuingThreshold设置）。这些对象会进入老年代Old Gen")]),_vm._v(" "),_c('li',[_vm._v("复制算法基本思想就是把内存分为两块（Survivor0、Survivor1），每次只使用一块，当一块内存用完后，就将活得复制另一块中。"),_c('strong',[_vm._v("复制算法不产生内存碎片")]),_vm._v("（复制过去的数据在内存中是连续的）")]),_vm._v(" "),_c('li',[_vm._v("因为Eden区对象一般存活率较低，所以Eden占用新生代80%空间，而Survivor0、Survivor1分别10%，因为一旦放生GC，绝大部分的对象都会被清除，少数会到Survivor区。")])])]),_vm._v(" "),_c('li',[_vm._v("劣势：\n"),_c('ul',[_c('li',[_vm._v("浪费了Survivor区的一半内存空间")]),_vm._v(" "),_c('li',[_vm._v("如果对象存活率很高，我们会将对象都复制一遍，并将引用的地址重置一遍。复制算法在存活率较高情况下（大量static），花费时间较多。复制算法想要高效，起码对象存活率要非常低才行。")])])])]),_vm._v(" "),_c('h3',{attrs:{"id":"标记清除-mark-sweep"}},[_c('a',{staticClass:"header-anchor",attrs:{"href":"#标记清除-mark-sweep"}},[_vm._v("#")]),_vm._v(" 标记清除 Mark-Sweep")]),_vm._v(" "),_c('ul',[_c('li',[_vm._v("Full GC一般由"),_c('code',[_vm._v("标记清除 Mark-Sweep")]),_vm._v(" 和"),_c('code',[_vm._v("标记压缩 Mark-Compact")]),_vm._v("混合实现")]),_vm._v(" "),_c('li',[_vm._v("原理")])]),_vm._v(" "),_c('ul',[_c('li',[_vm._v("算法分为标记、清除两个阶段，先标记出要回收的对象，然后统一回收这些对象")]),_vm._v(" "),_c('li',[_vm._v("优点： 节约空间")]),_vm._v(" "),_c('li',[_vm._v("缺点： 1耗时（需要两次扫描）；2会产生内存碎片（清除内存数据，会造成空闲内存不连续）")])]),_vm._v(" "),_c('h3',{attrs:{"id":"标记压缩-mark-compact"}},[_c('a',{staticClass:"header-anchor",attrs:{"href":"#标记压缩-mark-compact"}},[_vm._v("#")]),_vm._v(" 标记压缩 Mark-Compact")]),_vm._v(" "),_c('ul',[_c('li',[_vm._v("标记压缩，标记存活的对象，通过把存活的对象都往内存的一端移动，然后清除边界以外的内存数据。")]),_vm._v(" "),_c('li',[_c('code',[_vm._v("标记压缩 Mark-Compact")]),_vm._v("是对"),_c('code',[_vm._v("标记清除 Mark-Sweep")]),_vm._v("缺点2的优化，把不连续的内存空间进行压缩整理，但是同时耗时也是最长的（需要标记 + 整理两步）")])]),_vm._v(" "),_c('div',{staticClass:"custom-block tip"},[_c('p',{staticClass:"custom-block-title"},[_vm._v("TIP")]),_vm._v(" "),_c('ul',[_c('li',[_vm._v("Full GC因为是两种算法的结合，所以实质是 "),_c('code',[_vm._v("标记Mark - 清除Sweep - 压缩Compact")]),_vm._v(" 的结合")]),_vm._v(" "),_c('li',[_vm._v("原理：Full GC进行多次的"),_c('code',[_vm._v("Mark-Sweep")]),_vm._v("以后，会进行"),_c('code',[_vm._v("Mark-Compact")])])])]),_vm._v(" "),_c('h3',{attrs:{"id":"算法总结"}},[_c('a',{staticClass:"header-anchor",attrs:{"href":"#算法总结"}},[_vm._v("#")]),_vm._v(" 算法总结")]),_vm._v(" "),_c('ul',[_c('li',[_vm._v("内存效率：复制算法 > 标记清除 > 标记压缩")]),_vm._v(" "),_c('li',[_vm._v("内存整齐度：复制算法 = 标记压缩 > 标记清除")]),_vm._v(" "),_c('li',[_vm._v("内存利用率：标记压缩 = 标记清除 > 复制算法")])])])}
+var staticRenderFns = []
+
+
+
+/***/ }),
+
+/***/ "./docs/jvm/jvm3.md":
+/*!**************************!*\
+  !*** ./docs/jvm/jvm3.md ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _jvm3_md_vue_type_template_id_5c07bee8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./jvm3.md?vue&type=template&id=5c07bee8 */ "./docs/jvm/jvm3.md?vue&type=template&id=5c07bee8");
+/* harmony import */ var _nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _jvm3_md_vue_type_template_id_5c07bee8__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _jvm3_md_vue_type_template_id_5c07bee8__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./docs/jvm/jvm3.md?vue&type=template&id=5c07bee8":
+/*!********************************************************!*\
+  !*** ./docs/jvm/jvm3.md?vue&type=template&id=5c07bee8 ***!
+  \********************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_cache_loader_dist_cjs_js_cacheDirectory_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vuepress_core_node_modules_cache_vuepress_cacheIdentifier_8c2f02a4_vue_loader_template_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_cache_loader_dist_cjs_js_ref_1_0_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vue_loader_lib_index_js_ref_1_1_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vuepress_markdown_loader_index_js_ref_1_2_jvm3_md_vue_type_template_id_5c07bee8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/@vuepress/core/node_modules/.cache/vuepress","cacheIdentifier":"8c2f02a4-vue-loader-template"}!../../../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/cache-loader/dist/cjs.js??ref--1-0!../../../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib??ref--1-1!../../../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/@vuepress/markdown-loader??ref--1-2!./jvm3.md?vue&type=template&id=5c07bee8 */ "../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/cache-loader/dist/cjs.js?{\"cacheDirectory\":\"../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/@vuepress/core/node_modules/.cache/vuepress\",\"cacheIdentifier\":\"8c2f02a4-vue-loader-template\"}!../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib/loaders/templateLoader.js?!../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/cache-loader/dist/cjs.js?!../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/vue-loader/lib/index.js?!../../../.nvm/versions/node/v20.11.1/lib/node_modules/vuepress/node_modules/@vuepress/markdown-loader/index.js?!./docs/jvm/jvm3.md?vue&type=template&id=5c07bee8");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_cache_loader_dist_cjs_js_cacheDirectory_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vuepress_core_node_modules_cache_vuepress_cacheIdentifier_8c2f02a4_vue_loader_template_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_cache_loader_dist_cjs_js_ref_1_0_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vue_loader_lib_index_js_ref_1_1_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vuepress_markdown_loader_index_js_ref_1_2_jvm3_md_vue_type_template_id_5c07bee8__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_cache_loader_dist_cjs_js_cacheDirectory_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vuepress_core_node_modules_cache_vuepress_cacheIdentifier_8c2f02a4_vue_loader_template_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_cache_loader_dist_cjs_js_ref_1_0_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vue_loader_lib_index_js_ref_1_1_nvm_versions_node_v20_11_1_lib_node_modules_vuepress_node_modules_vuepress_markdown_loader_index_js_ref_1_2_jvm3_md_vue_type_template_id_5c07bee8__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=93.f3701adb.js.map

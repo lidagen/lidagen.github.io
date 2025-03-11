@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linxu Shell | GEN</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/lidagen.github.io/favicon.ico">
+    <meta name="description" content="积跬步。">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    <link rel="preload" href="/lidagen.github.io/assets/css/styles.styles.c94ac4bb.css" as="style"><link rel="preload" href="/lidagen.github.io/assets/js/app.25c904a4.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/4.4bbfa83e.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/2.c31ab677.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/0.d2c14809.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/1.22d17cb2.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/3.658c3bd0.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/145.868de2ca.js" as="script"><link rel="prefetch" href="/lidagen.github.io/assets/js/10.4ab11789.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/100.f220410c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/101.4b021d84.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/102.70c87a9a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/103.c8fdfcb8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/104.5f458458.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/105.bfdffd8a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/106.c2da52ff.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/107.32157a2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/108.f9a4890d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/109.d2f26662.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/11.ecf6f195.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/110.e6ef7eb7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/111.31e326a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/112.0e8de5ee.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/113.1e89f4b5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/114.8415d505.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/115.4449bf0e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/116.01a5abf1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/117.cd4c7345.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/118.1c925587.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/119.9999b12c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/12.fdbc4c9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/120.45d73bb0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/121.b20712f4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/122.60fe00a0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/123.e6bfc091.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/124.a0abb92a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/125.f1f26892.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/126.0e5e04ef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/127.8cab743f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/128.7602cfe5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/129.7b59d497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/13.6c3f9c8f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/130.b4eb1a48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/131.5985e177.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/132.6228204b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/133.ec876179.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/134.c5f25c0e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/135.ee6cf3a2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/136.188e6f28.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/137.97bb3bc8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/138.7d595d6c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/139.5b286381.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/14.ccee4a29.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/140.6889ffe3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/141.067b5bd3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/142.f9b0f4b2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/143.7ea1775f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/144.faa6c1be.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/146.90a29b91.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/147.32c8a0ff.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/148.9f6c501a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/149.fed428b8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/15.1df58668.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/150.b6141f66.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/151.848276ba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/152.e78045bc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/153.8403f74d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/154.d0b68d6b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/155.c35a9905.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/156.c9f791b6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/157.b87738b3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/158.94d067c9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/159.8affcd62.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/16.dd6cc40d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/160.47bbad1d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/161.bc8be01d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/162.f0f7f43a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/163.447d7f37.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/164.c8219729.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/165.4b832d4a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/166.7ceae1e9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/167.b27a106b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/168.eb6d2b6a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/17.9972d5e8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/18.8af3c2d8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/19.342c0a4d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/20.2bc21ea8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/21.d0c64065.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/22.db7aa5eb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/23.ba9f4d95.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/24.86039916.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/25.32f421ae.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/26.8f4e62dc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/27.543281e8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/28.847dd410.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/29.25044e74.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/30.6717f4a1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/31.fe0c5b36.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/32.1d1cbd6f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/33.5e0afca6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/34.4a4a318a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/35.e1b28c5a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/36.507f4cc9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/37.76b0dc42.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/38.1e31adac.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/39.44b90642.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/40.22ca848c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/41.55d5cd68.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/42.80eb6ca9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/43.4a4b18cb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/44.14935c71.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/45.a5911402.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/46.d1bb6264.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/47.ca766087.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/48.6eee35b0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/49.ecefb372.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/5.aed786b1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/50.758969b3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/51.90efcb14.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/52.c48ca7d0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/53.78ead7a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/54.e66d4160.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/55.ccdbc7bd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/56.fe3a5d48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/57.32b8c75b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/58.36f73b47.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/59.8167eeba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/6.65da5388.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/60.c595391b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/61.cb910183.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/62.49a88a57.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/63.9051fa25.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/64.8b973503.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/65.3398ca5e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/66.b7acfeb5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/67.8059fa0c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/68.8deee2b5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/69.4a9f3779.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/7.1c709b2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/70.78ee170e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/71.9bed63d6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/72.93529003.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/73.da42caf4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/74.6f889fee.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/75.3751b68d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/76.64cdbaef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/77.521a5c20.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/78.77236b3a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/79.9d6bd623.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/8.bf230371.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/80.767486cd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/81.f9c5ca48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/82.996169a8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/83.412d6719.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/84.348758f2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/85.34072d20.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/86.a9d34b59.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/87.f30f79f3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/88.d91f1ad0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/89.5aa2c904.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/9.39560794.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/90.ff4f0371.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/91.5abe6039.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/92.95763647.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/93.f3701adb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/94.5237fae2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/95.cd45b53e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/96.e9e0d6a2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/97.dc35f4f0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/98.06cba60d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/99.4c63077f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/vendors~docsearch.80fd3e2e.js">
+    <link rel="stylesheet" href="/lidagen.github.io/assets/css/styles.styles.c94ac4bb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lidagen.github.io/" class="home-link router-link-active"><img src="/lidagen.github.io/img/1.jpg" alt="GEN" class="logo"> <span class="site-name can-hide">GEN</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂" class="mobile-dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/build/dockerAliyun.html" class="nav-link">
+  docker aliyun配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow down"></span></button> <button type="button" aria-label="link" class="mobile-dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂" class="mobile-dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/build/dockerAliyun.html" class="nav-link">
+  docker aliyun配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow down"></span></button> <button type="button" aria-label="link" class="mobile-dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA WEB</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DATABASE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SpringCloud</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>中间件</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境部署</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>读书笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VUE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NoSQL</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>MQ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JVM</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JUC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Shell</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lidagen.github.io/shell/shell.html" aria-current="page" class="active sidebar-link">shell命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell.html#linxu-shell" class="sidebar-link">Linxu Shell</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell.html#shell脚本编写" class="sidebar-link">shell脚本编写</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell.html#脚本编写和三种执行方式" class="sidebar-link">脚本编写和三种执行方式</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell.html#shell-操作" class="sidebar-link">shell 操作</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell.html#shell-流程控制" class="sidebar-link">shell 流程控制</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/shell/shell.html#linxu开机顺序" class="sidebar-link">linxu开机顺序</a></li></ul></li></ul></li><li><a href="/lidagen.github.io/shell/shell1.html" class="sidebar-link">shell基础</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Activiti</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Kubernetes</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="linxu-shell"><a href="#linxu-shell" class="header-anchor">#</a> Linxu Shell</h2> <h3 id="shell脚本编写"><a href="#shell脚本编写" class="header-anchor">#</a> shell脚本编写</h3> <ul><li>vim helloworld.sh</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#! /bin/bash</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;hello world&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token variable">$uname</span>
+
+</code></pre></div><ul><li>赋予可执行权限</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">chmod</span> u+x helloword.sh
+</code></pre></div><h3 id="脚本编写和三种执行方式"><a href="#脚本编写和三种执行方式" class="header-anchor">#</a> 脚本编写和三种执行方式</h3> <ul><li>数据脚本的绝对路径或者相对路径 <code>必须是可执行文件</code></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>/root/helloword.sh
+
+./helloword.sh
+</code></pre></div><ul><li>bash或者sh +脚本 <code>普通文件脚本文件都可以</code></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">sh</span> helloword.sh
+</code></pre></div><ul><li>在脚本路径前加 <code>.</code>或souce <code>普通文件脚本文件都可以</code></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">source</span> helloword.sh
+</code></pre></div><p>'''
+区别:</p> <ol><li>第一种和第二种会新开一个bash,不同bash中的变量无法共享</li> <li>第三种 是在同一个shell里执行
+<ul><li>打开shell 执行 uname=admin</li> <li>分别三种方式执行hellworld.sh,第三种会打印admin
+'''</li></ul></li></ol> <p>'''
+export:可以将当前进程变量传递给子进程使用</p> <ul><li>配置profile的时候 所有变量前必须加export
+'''</li></ul> <p>'''
+sh脚本增加ping www.baidu.com,三种方式执行脚本
+ps -ef 查看ping结果,会发现source 也可以体现source不会打开新进程执行ping
+'''</p> <ul><li>export</li></ul> <ul><li>shell 脚本执行,默认从当前进程查询变量</li> <li>当期进程查不到,会查询父进程</li> <li>export修饰变量,这个变量对子进程可见(不加export对子进程不可见)</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable">uname</span><span class="token operator">=</span>admin
+
+<span class="token comment"># 三种方式都可以打印uname值</span>
+</code></pre></div><h3 id="shell-操作"><a href="#shell-操作" class="header-anchor">#</a> shell 操作</h3> <h4 id="变量的操作"><a href="#变量的操作" class="header-anchor">#</a> 变量的操作</h4> <ul><li>变量名定义
+<ul><li>定义变量时,变量名不加$</li> <li>中间不可有空格,可以使用下划线</li> <li>不能使用标点符号</li> <li>不能使用bash关键字(可用help查看保留关键字)</li></ul></li> <li>变量类型
+<ul><li>局部变量: 在脚本或命令中定义,仅当前shell实例中有效,其它shell启动不能访问局部变量</li> <li>环境变量: 所有程序,包括shell启动程序,都可访问,有些程序需要环境变量保证正常运行</li> <li>shell变量: shell变量是由shell程序设置的特殊变量,shell变量中有一部分是环境变量,有一部分局部变量</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># 变量声明</span>
+<span class="token assign-left variable">name</span><span class="token operator">=</span><span class="token string">&quot;zhangsan&quot;</span>
+
+<span class="token comment"># 变量的调用</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$name</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">${name}</span>
+
+<span class="token comment"># 删除变量</span>
+<span class="token builtin class-name">unset</span> name
+
+<span class="token comment"># 只读变量(变量不可更改,删除)</span>
+
+<span class="token assign-left variable">url</span><span class="token operator">=</span><span class="token string">&quot;www.baidu.com&quot;</span>
+<span class="token builtin class-name">readonly</span> url
+</code></pre></div><h4 id="字符串的操作"><a href="#字符串的操作" class="header-anchor">#</a> 字符串的操作</h4> <ul><li>字符串是shell编程中最有用的数据类型,字符串可以用单引号,也可以用双引号,也可以不用引号</li> <li>单引号
+<ul><li>单引号中任何字符都会原样输出,单引号中的变量引用无效</li> <li>单引号字符串中,不可再出现一个单引号,单可成对出现,作为字符串拼接使用</li></ul></li> <li>双引号
+<ul><li>可以有变量</li> <li>双引号中可以出现转义字符</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>
+<span class="token comment"># 声明字符串</span>
+str1 <span class="token operator">=</span> hello world <span class="token operator">!</span>
+
+<span class="token comment"># 字符串拼接 双引号</span>
+name <span class="token operator">=</span> sunwukong
+name1 <span class="token operator">=</span> <span class="token string">&quot;hello, &quot;</span><span class="token variable">$name</span><span class="token string">&quot;!&quot;</span>
+
+<span class="token comment"># 字符串拼接,单引号</span>
+name <span class="token operator">=</span> sunwukong
+name1 <span class="token operator">=</span> <span class="token string">'hello, '</span><span class="token variable">$name</span><span class="token string">'!'</span>
+name1 <span class="token operator">=</span> <span class="token string">'hello, $name!'</span> <span class="token comment"># 这个无法获取变量,因为上一个,前两个单引号一组,后两个一组,不影响$name</span>
+
+<span class="token comment">#字符串</span>
+<span class="token assign-left variable">email</span><span class="token operator">=</span>proton1206.name
+<span class="token builtin class-name">echo</span> <span class="token variable">${<span class="token operator">#</span>email}</span> <span class="token comment">#字符串长度</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">${email<span class="token operator">:</span>1<span class="token operator">:</span>4}</span> <span class="token comment">#字符串截取</span>
+</code></pre></div><h4 id="数组"><a href="#数组" class="header-anchor">#</a> 数组</h4> <ul><li>bash支持一维数组,并没有限定数组大小</li> <li>数组元素下标从0开始,获取数组元素利用下标,下标可以是正整数或算术表达式</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#定义数组</span>
+<span class="token assign-left variable">arr</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">&quot;篮球&quot;</span> <span class="token string">&quot;足球&quot;</span> <span class="token string">&quot;羽毛球&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment">#读取</span>
+<span class="token assign-left variable">arr_1</span><span class="token operator">=</span><span class="token variable">${arr<span class="token punctuation">[</span>1<span class="token punctuation">]</span>}</span>
+
+<span class="token comment">#获取所有数组元素</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">${arr<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>
+
+<span class="token comment">#获取数组长度</span>
+<span class="token assign-left variable">length</span><span class="token operator">=</span><span class="token variable">${<span class="token operator">#</span>arr<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>
+<span class="token assign-left variable">length</span><span class="token operator">=</span><span class="token variable">${<span class="token operator">#</span>arr<span class="token punctuation">[</span>*<span class="token punctuation">]</span>}</span>
+</code></pre></div><h4 id="shell注释"><a href="#shell注释" class="header-anchor">#</a> shell注释</h4> <ul><li>以<code>#</code>开头的行就是注释,会被解释器忽略</li> <li>特殊的多行注释</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>:<span class="token operator">&lt;&lt;</span><span class="token string">EOF
+注释内容...
+注释内容...
+EOF</span>
+
+:<span class="token operator">&lt;&lt;</span><span class="token operator">!</span>
+注释内容<span class="token punctuation">..</span>.
+注释内容<span class="token punctuation">..</span>.
+<span class="token operator">!</span>
+
+</code></pre></div><h4 id="运算符"><a href="#运算符" class="header-anchor">#</a> 运算符</h4> <ul><li>运算符分类
+<ul><li>算术运算符
+'''
+<code>+</code> 加法 <code>expr $a + $b</code> 结果为30
+<code>-</code> 减法 <code>expr $a - $b</code> 结果为10
+<code>*</code> 乘法 <code>expr $a\$b</code> <code>/</code> 除法 <code>expr $a/$b</code> <code>%</code> 取余 <code>expr $a%$b</code> <code>=</code> 赋值 <code>a=$b</code> <code>==</code> 相等,比较两个数字返回布尔值<code>[$a==$b]</code> <code>!=</code> 不等,比较两个数字返回布尔值<code>[$a!=$b]</code>
+'''</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#! /bin/bash</span>
+
+<span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">10</span>
+<span class="token assign-left variable">b</span><span class="token operator">=</span><span class="token number">20</span>
+
+val <span class="token operator">=</span> <span class="token variable"><span class="token variable">`</span><span class="token function">expr</span> $a + $b<span class="token variable">`</span></span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$val</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$a</span> <span class="token operator">!=</span> <span class="token variable">$b</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;budengyu&quot;</span>
+<span class="token keyword">fi</span>	
+</code></pre></div><div class="language- extra-class"><pre><code>- 关系运算符
+</code></pre></div><p>'''
+<code>-eq</code> 检查是否相等,返回布尔值 <code>[ $a -eq $b ]</code> <code>-ne</code> 检查是否不相等
+<code>-gt</code> 大于
+<code>-lt</code> 小于
+<code>-ge</code> 大于
+``
+'''</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#! /bin/bash</span>
+<span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">10</span>
+<span class="token assign-left variable">b</span><span class="token operator">=</span><span class="token number">20</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$a</span> <span class="token parameter variable">-lt</span> <span class="token variable">$b</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token variable">$a</span> xiaoyu <span class="token variable">$b</span>&quot;</span>
+<span class="token keyword">fi</span>	
+</code></pre></div><div class="language- extra-class"><pre><code>- 布尔运算符
+</code></pre></div><p>'''
+<code>!</code> 非运算,表达式为true则返回false <code>[ !false ]</code>返回true
+<code>-o</code> 或运算,相当于 || , [ $a -lt 20 -o $b -gt 100 ]
+<code>-a</code> 与运算,相当于 &amp;&amp; , [ $a -lt 20 -a $b -gt 100]
+'''</p> <div class="language- extra-class"><pre><code>- 字符串运算符
+</code></pre></div><p>'''
+<code>==</code> 检查字符串是否相等 [ $a == $b ]
+<code>!=</code> 检查字符串不等 [ $a != $b ]
+<code>-z</code> 检查字符串长度是否为0,为0返回true [ -z $a ]
+<code>-n</code> 检查字符串长度是否不为0 [-n $a ]
+<code>$</code> 检查字符串是否为空  [ $a ]
+'''	
+- 文件测试运算符
+'''
+<code>-r</code> 是否是可读的
+<code>-w</code> 是否是可写的
+<code>-x</code> 是否是可执行的
+<code>-f</code> 是不是一个文件
+<code>-d</code> 是不是一个目录
+<code>-s</code> 是否不为空
+<code>-e</code> 文件是否存在
+'''</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token assign-left variable">file</span><span class="token operator">=</span><span class="token string">&quot;/var/node/test.sh&quot;</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-r</span> <span class="token function">file</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;可读&quot;</span>
+<span class="token keyword">else</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;不可读&quot;</span>
+<span class="token keyword">fi</span>			
+</code></pre></div><h4 id="echo打印数据"><a href="#echo打印数据" class="header-anchor">#</a> echo打印数据</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;hello wrold&quot;</span>
+<span class="token comment"># 转义字符</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;<span class="token entity" title="\&quot;">\&quot;</span>hello world &quot;</span><span class="token punctuation">\</span>&quot;
+
+<span class="token comment"># 显示变量</span>
+<span class="token assign-left variable">a</span><span class="token operator">=</span>zhangsan
+<span class="token builtin class-name">echo</span> <span class="token string">&quot; hello, <span class="token variable">$a</span>&quot;</span>
+
+<span class="token comment"># 显示换行</span>
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">&quot;OK! <span class="token entity" title="\n">\n</span>&quot;</span>
+
+<span class="token comment"># 显示不换行</span>
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">&quot;OK! <span class="token entity" title="\c">\c</span>&quot;</span>
+
+<span class="token comment"># 显示结果定向至文件(覆盖)</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;hello world&quot;</span> <span class="token operator">&gt;</span> myfile
+
+<span class="token comment"># 原样输出字符串</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'$name\&quot;'</span>
+
+<span class="token comment"># 显示命令执行结果</span>
+<span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">`</span><span class="token function">date</span><span class="token variable">`</span></span>
+</code></pre></div><h3 id="shell-流程控制"><a href="#shell-流程控制" class="header-anchor">#</a> shell 流程控制</h3> <h4 id="分支if-case"><a href="#分支if-case" class="header-anchor">#</a> 分支if case</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token keyword">if</span> condition1
+<span class="token keyword">then</span> 
+	command1
+<span class="token keyword">elif</span> condition2
+<span class="token keyword">then</span>
+	command2
+<span class="token keyword">else</span>
+	command3
+<span class="token keyword">fi</span>				
+</code></pre></div><h4 id="case-为多选择语句-可以用case匹配一个值与一个模式"><a href="#case-为多选择语句-可以用case匹配一个值与一个模式" class="header-anchor">#</a> case 为多选择语句,可以用case匹配一个值与一个模式</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># ;;相当于break 不加会穿透</span>
+<span class="token keyword">case</span> 值 <span class="token keyword">in</span>
+模式1<span class="token punctuation">)</span>
+	command1
+	command2
+	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+模式2<span class="token punctuation">)</span>
+	command1
+	command2
+	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>		
+
+</code></pre></div><div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># read 监控键盘输入</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'输入1到2之间数字'</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'你输入的数字为:'</span>
+<span class="token builtin class-name">read</span> num
+<span class="token keyword">case</span> <span class="token variable">$num</span> <span class="token keyword">in</span>
+	<span class="token number">1</span><span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;你选择了1&quot;</span>
+	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+	<span class="token number">2</span><span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;你选择了2&quot;</span>
+	<span class="token punctuation">;</span><span class="token punctuation">;</span>
+	*<span class="token punctuation">)</span> <span class="token builtin class-name">echo</span> <span class="token string">&quot;你没有选择1或2&quot;</span>
+<span class="token keyword">esac</span>
+</code></pre></div><h4 id="循环-for"><a href="#循环-for" class="header-anchor">#</a> 循环 for</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token keyword">for</span> <span class="token for-or-select variable">loop</span> <span class="token keyword">in</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span>
+<span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;this value is <span class="token variable">$loop</span>&quot;</span>
+<span class="token keyword">done</span>	
+</code></pre></div><div class="language-sh extra-class"><pre class="language-sh"><code><span class="token keyword">for</span> <span class="token for-or-select variable">str</span> <span class="token keyword">in</span> <span class="token string">&quot;This is a string&quot;</span>,<span class="token string">&quot;hello moto&quot;</span>
+<span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> <span class="token variable">$str</span>
+<span class="token keyword">done</span>	
+
+</code></pre></div><h4 id="循环while"><a href="#循环while" class="header-anchor">#</a> 循环while</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#let命令,用于执行一个或多个表达式,变量计算中不需要加$来表示变量</span>
+<span class="token assign-left variable">int</span><span class="token operator">=</span><span class="token number">1</span>
+<span class="token keyword">while</span><span class="token variable"><span class="token punctuation">((</span>$int<span class="token operator">&lt;=</span><span class="token number">5</span><span class="token punctuation">))</span></span>
+<span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> <span class="token variable">$int</span>
+	<span class="token builtin class-name">let</span> <span class="token string">&quot;int++&quot;</span>
+<span class="token keyword">done</span>
+
+<span class="token comment">#无线循环</span>
+<span class="token keyword">while</span> <span class="token boolean">true</span>
+<span class="token keyword">do</span>
+	<span class="token builtin class-name">command</span>
+<span class="token keyword">done</span>	
+
+</code></pre></div><h4 id="break-跳出循环-continue-跳出本次循环"><a href="#break-跳出循环-continue-跳出本次循环" class="header-anchor">#</a> break 跳出循环 continue 跳出本次循环</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#! /bin/bash</span>
+
+while:
+<span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> <span class="token parameter variable">-n</span> <span class="token string">&quot;输入1到5之间数字&quot;</span>
+	<span class="token builtin class-name">read</span> num
+	<span class="token keyword">case</span> <span class="token variable">$num</span> <span class="token keyword">in</span>
+		<span class="token number">1</span><span class="token operator">|</span><span class="token number">2</span><span class="token operator">|</span><span class="token number">3</span><span class="token operator">|</span><span class="token number">4</span><span class="token operator">|</span><span class="token number">5</span><span class="token punctuation">)</span> 
+		<span class="token builtin class-name">echo</span> <span class="token string">&quot;你输入的数字是<span class="token variable">$num</span>&quot;</span>
+		<span class="token punctuation">;</span><span class="token punctuation">;</span>
+		*<span class="token punctuation">)</span> 
+		<span class="token builtin class-name">echo</span> <span class="token string">&quot;输入的不是1到5,游戏结束&quot;</span>
+		<span class="token builtin class-name">break</span>
+		<span class="token punctuation">;</span><span class="token punctuation">;</span>
+	<span class="token keyword">esac</span>
+<span class="token keyword">done</span>
+
+</code></pre></div><h4 id="函数"><a href="#函数" class="header-anchor">#</a> 函数</h4> <ul><li>linux shell 可以用户定义函数,然后在shell中调用</li> <li>可以带function fun()定义,也可以直接fun()定义,不带任何参数</li> <li>参数返回,可以显式加return,如果不加,将以最后一条命令结束的结果作为返回值</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#! /bin/bash</span>
+<span class="token function-name function">demoFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;这是我第一个shell 函数&quot;</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;输入一个数字&quot;</span>
+	<span class="token builtin class-name">read</span> aNum
+	<span class="token builtin class-name">return</span> <span class="token variable">$aNum</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;执行函数开始&quot;</span>
+demoFun
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;执行函数结束&quot;</span>
+<span class="token builtin class-name">echo</span> <span class="token variable">$?</span>
+
+
+<span class="token comment"># 函数参数</span>
+<span class="token function-name function">funwithparam</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;第一个参数 <span class="token variable">$1</span>&quot;</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;第二个参数 <span class="token variable">$2</span>&quot;</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;参数总数 <span class="token variable">$#</span>&quot;</span>
+	<span class="token builtin class-name">echo</span> <span class="token string">&quot;字符串输出所有参数 <span class="token variable">$*</span>&quot;</span>
+
+<span class="token punctuation">}</span>
+funwithparam <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span>
+</code></pre></div><h3 id="linxu开机顺序"><a href="#linxu开机顺序" class="header-anchor">#</a> linxu开机顺序</h3> <h4 id="基于开机自启动rc-local"><a href="#基于开机自启动rc-local" class="header-anchor">#</a> 基于开机自启动rc_local</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">touch</span> /usr/local/my_init.sh
+
+<span class="token builtin class-name">cd</span> /etc/rc.d/
+
+<span class="token function">vi</span> rc.local
+<span class="token comment"># 添加执行脚本</span>
+
+<span class="token builtin class-name">source</span> /usr/local/my_init.sh
+</code></pre></div><ul><li>创建脚本存放文件夹,创建脚本</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /usr/local/script
+
+<span class="token function">touch</span> /usr/local/script/my_init.sh
+<span class="token comment"># 编写脚本</span>
+<span class="token comment"># 设置执行权限</span>
+<span class="token function">chmod</span> u+x /usr/local/script/my_init.sh
+<span class="token comment"># 脚本copy到/etc/init.d/目录下</span>
+<span class="token function">cp</span> my_init.sh /etc/init.d/
+<span class="token comment"># 添加到服务</span>
+<span class="token function">chkconfig</span> <span class="token parameter variable">-add</span> /etc/init.d/my_init.sh
+<span class="token comment"># 重启</span>
+<span class="token function">reboot</span>
+
+</code></pre></div><h4 id="基于开机自启动chkconfig"><a href="#基于开机自启动chkconfig" class="header-anchor">#</a> 基于开机自启动chkconfig</h4> <ul><li><p><code>vim /usr/local/dateservice.sh</code></p></li> <li><p>脚本需要加<code>#chkconfig: 35 66 88</code></p></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token shebang important">#! /bin/bash</span>
+<span class="token comment">#chkconfig: 35 66 88</span>
+
+netpdate cn.ntp.rog.cn
+</code></pre></div><ul><li><p><code>chmod ug+x /usr/local/dateservice.sh</code></p></li> <li><p><code>mv dateservice.sh /etc/rc.d/init.d/</code></p></li> <li><p><code>chkconfig --add /etc/init.d/dateservice.sh</code></p></li></ul> <h4 id="定时执行任务crontab"><a href="#定时执行任务crontab" class="header-anchor">#</a> 定时执行任务crontab</h4> <ul><li><p>在系统服务中,crond负责周期任务<code>systemctl status crond.service</code></p></li> <li><p>添加任务,编辑当前用户任务列表<code>crontab -e</code></p></li> <li><p>cron表达式 <code>分 时 日 月 周 命令</code>
+'''
+30 21 * * * /usr/local/etc/rc.d/lighttpd restart
+'''</p></li> <li><p>重启crontab,配置生效 <code>systemctl restart crond.service</code></p></li> <li><p>通过<code>crontab -l</code>查看定时任务</p></li> <li><p>查看历史任务<code>vim /var/spool/mail/root</code></p></li> <li><p>清除任务 <code>crontab -r</code></p></li></ul> <h4 id="服务器免密"><a href="#服务器免密" class="header-anchor">#</a> 服务器免密</h4></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/lidagen.github.io/juc/deadLock.html" class="prev">
+        死锁以及问题定位分析
+      </a></span> <span class="next"><a href="/lidagen.github.io/shell/shell1.html">
+        shell基础
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/lidagen.github.io/assets/js/app.25c904a4.js" defer></script><script src="/lidagen.github.io/assets/js/4.4bbfa83e.js" defer></script><script src="/lidagen.github.io/assets/js/2.c31ab677.js" defer></script><script src="/lidagen.github.io/assets/js/0.d2c14809.js" defer></script><script src="/lidagen.github.io/assets/js/1.22d17cb2.js" defer></script><script src="/lidagen.github.io/assets/js/3.658c3bd0.js" defer></script><script src="/lidagen.github.io/assets/js/145.868de2ca.js" defer></script>
+  </body>
+</html>

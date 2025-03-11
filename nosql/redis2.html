@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redis高级 | GEN</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/lidagen.github.io/favicon.ico">
+    <meta name="description" content="积跬步。">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    <link rel="preload" href="/lidagen.github.io/assets/css/styles.styles.c94ac4bb.css" as="style"><link rel="preload" href="/lidagen.github.io/assets/js/app.25c904a4.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/4.4bbfa83e.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/2.c31ab677.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/0.d2c14809.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/1.22d17cb2.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/3.658c3bd0.js" as="script"><link rel="preload" href="/lidagen.github.io/assets/js/138.7d595d6c.js" as="script"><link rel="prefetch" href="/lidagen.github.io/assets/js/10.4ab11789.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/100.f220410c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/101.4b021d84.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/102.70c87a9a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/103.c8fdfcb8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/104.5f458458.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/105.bfdffd8a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/106.c2da52ff.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/107.32157a2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/108.f9a4890d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/109.d2f26662.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/11.ecf6f195.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/110.e6ef7eb7.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/111.31e326a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/112.0e8de5ee.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/113.1e89f4b5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/114.8415d505.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/115.4449bf0e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/116.01a5abf1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/117.cd4c7345.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/118.1c925587.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/119.9999b12c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/12.fdbc4c9f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/120.45d73bb0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/121.b20712f4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/122.60fe00a0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/123.e6bfc091.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/124.a0abb92a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/125.f1f26892.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/126.0e5e04ef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/127.8cab743f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/128.7602cfe5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/129.7b59d497.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/13.6c3f9c8f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/130.b4eb1a48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/131.5985e177.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/132.6228204b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/133.ec876179.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/134.c5f25c0e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/135.ee6cf3a2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/136.188e6f28.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/137.97bb3bc8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/139.5b286381.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/14.ccee4a29.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/140.6889ffe3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/141.067b5bd3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/142.f9b0f4b2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/143.7ea1775f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/144.faa6c1be.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/145.868de2ca.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/146.90a29b91.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/147.32c8a0ff.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/148.9f6c501a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/149.fed428b8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/15.1df58668.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/150.b6141f66.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/151.848276ba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/152.e78045bc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/153.8403f74d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/154.d0b68d6b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/155.c35a9905.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/156.c9f791b6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/157.b87738b3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/158.94d067c9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/159.8affcd62.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/16.dd6cc40d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/160.47bbad1d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/161.bc8be01d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/162.f0f7f43a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/163.447d7f37.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/164.c8219729.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/165.4b832d4a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/166.7ceae1e9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/167.b27a106b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/168.eb6d2b6a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/17.9972d5e8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/18.8af3c2d8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/19.342c0a4d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/20.2bc21ea8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/21.d0c64065.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/22.db7aa5eb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/23.ba9f4d95.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/24.86039916.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/25.32f421ae.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/26.8f4e62dc.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/27.543281e8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/28.847dd410.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/29.25044e74.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/30.6717f4a1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/31.fe0c5b36.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/32.1d1cbd6f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/33.5e0afca6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/34.4a4a318a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/35.e1b28c5a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/36.507f4cc9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/37.76b0dc42.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/38.1e31adac.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/39.44b90642.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/40.22ca848c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/41.55d5cd68.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/42.80eb6ca9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/43.4a4b18cb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/44.14935c71.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/45.a5911402.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/46.d1bb6264.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/47.ca766087.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/48.6eee35b0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/49.ecefb372.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/5.aed786b1.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/50.758969b3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/51.90efcb14.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/52.c48ca7d0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/53.78ead7a9.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/54.e66d4160.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/55.ccdbc7bd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/56.fe3a5d48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/57.32b8c75b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/58.36f73b47.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/59.8167eeba.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/6.65da5388.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/60.c595391b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/61.cb910183.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/62.49a88a57.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/63.9051fa25.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/64.8b973503.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/65.3398ca5e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/66.b7acfeb5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/67.8059fa0c.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/68.8deee2b5.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/69.4a9f3779.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/7.1c709b2b.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/70.78ee170e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/71.9bed63d6.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/72.93529003.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/73.da42caf4.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/74.6f889fee.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/75.3751b68d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/76.64cdbaef.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/77.521a5c20.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/78.77236b3a.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/79.9d6bd623.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/8.bf230371.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/80.767486cd.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/81.f9c5ca48.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/82.996169a8.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/83.412d6719.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/84.348758f2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/85.34072d20.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/86.a9d34b59.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/87.f30f79f3.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/88.d91f1ad0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/89.5aa2c904.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/9.39560794.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/90.ff4f0371.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/91.5abe6039.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/92.95763647.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/93.f3701adb.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/94.5237fae2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/95.cd45b53e.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/96.e9e0d6a2.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/97.dc35f4f0.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/98.06cba60d.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/99.4c63077f.js"><link rel="prefetch" href="/lidagen.github.io/assets/js/vendors~docsearch.80fd3e2e.js">
+    <link rel="stylesheet" href="/lidagen.github.io/assets/css/styles.styles.c94ac4bb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lidagen.github.io/" class="home-link router-link-active"><img src="/lidagen.github.io/img/1.jpg" alt="GEN" class="logo"> <span class="site-name can-hide">GEN</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂" class="mobile-dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/build/dockerAliyun.html" class="nav-link">
+  docker aliyun配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow down"></span></button> <button type="button" aria-label="link" class="mobile-dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lidagen.github.io/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/lidagen.github.io/nav/vuepress.html" class="nav-link">
+  vuepress
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="杂" class="dropdown-title"><span class="title">杂</span> <span class="arrow down"></span></button> <button type="button" aria-label="杂" class="mobile-dropdown-title"><span class="title">杂</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/git.html" class="nav-link">
+  GIT命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/django.html" class="nav-link">
+  python+django
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/vuecli.html" class="nav-link">
+  vue cli搭建项目
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/es6Trnsferes5.html" class="nav-link">
+  babel es6转换es5
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/build/dockerAliyun.html" class="nav-link">
+  docker aliyun配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/npm.html" class="nav-link">
+  npm 配置
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/linux.html" class="nav-link">
+  linux 常用命令
+</a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/ubuntu.html" class="nav-link">
+  Ubuntu 下Linux 命令
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="link" class="dropdown-title"><span class="title">link</span> <span class="arrow down"></span></button> <button type="button" aria-label="link" class="mobile-dropdown-title"><span class="title">link</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/lidagen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/GENDALI" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/ws346348183" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  csdn
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="/lidagen.github.io/knowledge/aboutMe.html" class="nav-link">
+  关于我
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JAVA WEB</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>DATABASE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>SpringCloud</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Spring</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>中间件</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>环境部署</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>读书笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VUE</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>NoSQL</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lidagen.github.io/nosql/redis1.html" class="sidebar-link">Redis基础 </a></li><li><a href="/lidagen.github.io/nosql/redis2.html" aria-current="page" class="active sidebar-link">Redis高级</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis2.html#redis高级" class="sidebar-link">Redis高级</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis2.html#linux-操作redis" class="sidebar-link">linux 操作redis</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis2.html#持久化" class="sidebar-link">持久化</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis2.html#事务" class="sidebar-link">事务</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis2.html#删除策略" class="sidebar-link">删除策略</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis2.html#redis-conf" class="sidebar-link">redis.conf</a></li><li class="sidebar-sub-header"><a href="/lidagen.github.io/nosql/redis2.html#redis高级数据类型" class="sidebar-link">redis高级数据类型</a></li></ul></li></ul></li><li><a href="/lidagen.github.io/nosql/redis3.html" class="sidebar-link">Redis集群</a></li><li><a href="/lidagen.github.io/nosql/redis4.html" class="sidebar-link">Redis应用</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>MQ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JVM</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JUC</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Shell</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Activiti</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Kubernetes</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="redis高级"><a href="#redis高级" class="header-anchor">#</a> Redis高级</h2> <h3 id="linux-操作redis"><a href="#linux-操作redis" class="header-anchor">#</a> linux 操作redis</h3> <h4 id="_1安装"><a href="#_1安装" class="header-anchor">#</a> 1安装</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#下载解压tar.gz包</span>
+<span class="token function">wget</span> http://download.redis.io/releases/redis-5.0.7.tar.gz
+<span class="token comment">#进入解压的包</span>
+<span class="token builtin class-name">cd</span> ./redis-5.0.7
+<span class="token comment">#编译</span>
+<span class="token function">make</span>
+<span class="token comment">#安装</span>
+<span class="token function">make</span> <span class="token function">install</span>
+</code></pre></div><h4 id="_2-指定端口启动"><a href="#_2-指定端口启动" class="header-anchor">#</a> 2.指定端口启动</h4> <div class="language-sh extra-class"><pre class="language-sh"><code>redis-server <span class="token parameter variable">--prot</span> <span class="token number">6379</span>
+<span class="token comment">#关闭redis</span>
+<span class="token comment">#查进程,找PID号杀掉</span>
+<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span><span class="token function">grep</span> redis-
+<span class="token function">kill</span> <span class="token parameter variable">-s</span> <span class="token number">9</span> pid号
+</code></pre></div><h4 id="_3-配置文件启动"><a href="#_3-配置文件启动" class="header-anchor">#</a> 3.配置文件启动</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#修改目录下的redis.conf,启动</span>
+redis-server redis.conf
+</code></pre></div><h3 id="持久化"><a href="#持久化" class="header-anchor">#</a> 持久化</h3> <ul><li>持久化：利用永久存储介质进行保存，在特定时间将保存的数据进行恢复的机制。</li> <li>持久化是防止意外丢失，确保数据安全</li> <li>持久化过程工作方式：
+<ul><li>数据（快照）：将当前的数据状态进行保存，存储数据结果，关注点在数据。（RDB）</li> <li>过程（日志）：将数据的操作步骤记录，存储操作过程，关注点在数据操作的过程。（AOF）</li></ul></li></ul> <h4 id="_1-rdb"><a href="#_1-rdb" class="header-anchor">#</a> 1.RDB</h4> <ul><li>RDB启动方式---save指令</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#手动执行一次保存操作，保存位置在redis.conf配置的dir目录下dump.rdb文件</span>
+save
+</code></pre></div><ul><li>RDB相关配置<code>redis.conf</code></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#设置本地保存快照名称，默认值是dump.rdb，可改为dump_端口号.rdb</span>
+dbfilename dump.rdb
+<span class="token comment">#存储rdb的路径</span>
+<span class="token function">dir</span> <span class="token string">&quot;/opt/redisData&quot;</span>
+<span class="token comment">#本地存储是否压缩数据，默认yes,如果设置为no,可节省CPU时间，但文件会变大巨大</span>
+rdbcompression <span class="token function">yes</span>
+<span class="token comment">#设置是如rdb文件格式校验，默认yes,如果设置no，可节约读写10%时间消耗，但存储数据有损坏风险</span>
+rdbchecksum <span class="token function">yes</span>
+<span class="token comment">#后台bgsave存储出错是否停止保存，默认yes</span>
+stop-writes-on-bgsave-error <span class="token function">yes</span>
+<span class="token comment">#配置RDB自动保存，叫save后台是bgsave指令</span>
+save <span class="token number">300</span> <span class="token number">50</span>
+</code></pre></div><ul><li>save指令工作原理
+<ul><li>因为redis是单线程的，save指令保存数据会耗时，有可能导致长时间阻塞。线上环境不建议使用</li></ul></li> <li>bgsave指令
+<ul><li>basave命令后，其不是立刻执行，而是会调用fork函数生成子进程保存数据，不占用redis线程。</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#后台保存</span>
+bgsave
+</code></pre></div><ul><li><p><strong>bgsave是针对save的优化，Redis涉及RDB的操作都用bgsave代替save指令</strong></p></li> <li><p>bgsave自动执行</p> <ul><li>配置：</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#second 监控时间 changes 监控key的变化量</span>
+<span class="token comment"># 在10秒内监控到了10个key发生了变化就保存</span>
+<span class="token comment"># 在redis.conf中配置</span>
+save second changes
+</code></pre></div></li> <li><p>注意：</p> <ul><li>save配置要根据实际业务设定，频度过高或者过低都可能出现性能问题</li> <li>save配置中second和changes设置通常互补对应关系，尽量不要设置成包含性的关系</li> <li>save配置后是bgsave指令操作</li></ul></li> <li><p>rdb特殊启动形式</p> <ul><li>全量复制</li> <li>服务器运行过程中重启</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>debug reload
+</code></pre></div><ul><li>关闭服务器时指定保存数据</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code>  <span class="token function">shutdown</span> save
+</code></pre></div><ul><li>RDB优点
+<ul><li>RDB是一个紧凑的二进制文件，存储效率高</li> <li>RDB内部存储的是redis在某个时间点的数据快照，非常适用数据备份，全量复制</li> <li>RDB恢复数据速度比AOF快</li> <li>应用：服务器中每隔N小时执行bgsave备份，并将RDB文件拷贝到远程机器中，用于灾难恢复</li></ul></li> <li>RDB缺点
+<ul><li>RDB无论执行指令还是利用配置，都无法做到实时持久化，有较大可能丢失部分数据</li> <li>bgsave指令每次运行需要fork子进程，要牺牲一些性能</li> <li>Redis众多版本未就RDB文件格式统一，不同版本可能无法兼容</li></ul></li></ul> <h4 id="_2-aof"><a href="#_2-aof" class="header-anchor">#</a> 2.AOF</h4> <ul><li>append only file:以独立日志的方式记录每次命令，重启后再次执行AOF文件中的命令达到恢复数据的目的。</li> <li>aof解决了数据持久化和实时性，是redis持久化的主流方式</li> <li>aof持久化的三种策略（appendfsync）
+<ul><li>always(每次): 每次写入都同步到aof文件中，数据零误差，<strong>性能较低</strong></li> <li>everysec(每秒)：每秒将缓存区的数据同步到aof文件中，数据准确率较高，性能较高，最多丢失1秒内的数据</li> <li>no (系统控制)：由操作系统控制每次aof的周期，<strong>时间不可控</strong></li></ul></li> <li>aof开启</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#conf文件中配置，dir中生成aof文件</span>
+<span class="token comment">#是否开启aof，默认no</span>
+appendonly <span class="token function">yes</span><span class="token operator">|</span>no
+<span class="token comment">#策略</span>
+appendfsync always<span class="token operator">|</span>everysec<span class="token operator">|</span>no
+<span class="token comment">#文件名</span>
+appendfilename appendonly_端口号.aof
+</code></pre></div><ul><li>AOF重写
+<ul><li>随着命令越来越多，文件会越来越大，为了解决这个问题，Redis引入了aof重写机制，简单来说就是对同一个数据若干条指令转化成的最终结果进行对于指令记录</li> <li>重写好处：1.降低磁盘占用量；2.降低持久化时间，减少IO；3.数据恢复效率变高</li> <li>重写方式</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#手动重写</span>
+bgrewriteaof
+<span class="token comment">#conf配置</span>
+<span class="token comment">#设置允许重写的最小aof文件大小，避免了达到约定百分比但尺寸仍然很小的情况还要重写</span>
+auto-aof-rewrite-min-size 64mb
+<span class="token comment">#aof自动重写配置。当目前aof文件大小超过上一次重写的aof文件大小的百分之多少进行重写</span>
+auto-aof-rewrite-percentage <span class="token number">100</span>
+</code></pre></div><h4 id="_3-rdb和aof的区别"><a href="#_3-rdb和aof的区别" class="header-anchor">#</a> 3.RDB和AOF的区别</h4> <table><thead><tr><th>持久化方式</th> <th style="text-align:center;">RDB</th> <th style="text-align:center;">AOF</th></tr></thead> <tbody><tr><td>占用存储空间</td> <td style="text-align:center;">java</td> <td style="text-align:center;">AP</td></tr> <tr><td>存储速度</td> <td style="text-align:center;">小（数据级：压缩）</td> <td style="text-align:center;">大 （指令级：重写）</td></tr> <tr><td>恢复速度</td> <td style="text-align:center;">快</td> <td style="text-align:center;">慢</td></tr> <tr><td>数据安全性</td> <td style="text-align:center;">会丢失数据</td> <td style="text-align:center;">依据策略决定</td></tr> <tr><td>资源消耗</td> <td style="text-align:center;">高/重量级</td> <td style="text-align:center;">低/轻量级</td></tr> <tr><td>启动优先级</td> <td style="text-align:center;">低</td> <td style="text-align:center;">高</td></tr></tbody></table> <h5 id="_4-rdb和aof选择"><a href="#_4-rdb和aof选择" class="header-anchor">#</a> 4.RDB和AOF选择</h5> <ul><li><p>数据十分敏感，选AOF</p> <ul><li>策略为everysec,最多丢失1秒内数据</li> <li>注意：AOF文件存储较大，恢复较慢</li></ul></li> <li><p>数据呈现阶段有效性，选RDB</p> <ul><li>数据可以良好做到阶段内无丢失，且恢复较快</li> <li>注意:利用RDB实现紧凑数据持久化会使redis降的很低</li></ul></li> <li><p>综合对比</p> <ul><li>AOF适用数据敏感业务</li> <li>如能承受数分钟内丢失，且追求大数据恢复速度，选RDB</li> <li>容灾恢复选RDB</li> <li>双保险策略，都开启，重启后Redis优先使用AOF恢复</li></ul></li></ul> <h3 id="事务"><a href="#事务" class="header-anchor">#</a> 事务</h3> <h4 id="_1-事务简介"><a href="#_1-事务简介" class="header-anchor">#</a> 1.事务简介</h4> <ul><li>redis的一系列操作，中间不被打断</li></ul> <h4 id="_2-事务基本操作"><a href="#_2-事务基本操作" class="header-anchor">#</a> 2.事务基本操作</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#开启事务,事务开启的位置，在这个命令后续的指令都在一个事务内</span>
+multi
+<span class="token comment">#执行事务，设定的结束事务位置</span>
+<span class="token builtin class-name">exec</span>
+<span class="token comment"># 两个命令成对出现，设定了事务的开始和结束区间</span>
+
+<span class="token comment">#取消事务命令,发生在exec之前，multi之后</span>
+discard
+</code></pre></div><ul><li>注意：当我们加入事务命令的时候，命令加入任务队列中并未执行，只有执行了exec才真正执行</li> <li><code>multi</code>命令开启后，redis会创建一个队列，对之后的指令都放入队列中，在识别到<code>exec</code>指令后，在依次执行队列里的指令</li> <li>事务注意事项：
+<ul><li><code>multi</code>开启后，后续指令出错（比如set写成est），则事务全不执行，事务取消，无法执行<code>exec</code></li> <li><code>multi</code>开启后,对输入操作了不符合其数据结构的指令，比如对string用了lpush,则这行指令出错，其余正确执行。这种需要程序员自己回滚事务。</li></ul></li></ul> <h4 id="_3-锁"><a href="#_3-锁" class="header-anchor">#</a> 3.锁</h4> <h5 id="watch"><a href="#watch" class="header-anchor">#</a> watch</h5> <ul><li>一笔数据需要进行进行修改，这时几个客户端都有权限修改，为了保证不重复操作，需要锁来监控这个key是否发生了变化，如果变化则后续操作不发生。</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#对key进行监控，如果事务执行exec前key有了改动，则终止执行事务</span>
+<span class="token function">watch</span> key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token comment">#取消对所有key监控</span>
+unwatch
+</code></pre></div><ul><li>监控在<code>multi</code>之前，在<code>exec</code>执行前，key的值发生变化，则<code>exec</code>不执行</li></ul> <h5 id="分布式锁"><a href="#分布式锁" class="header-anchor">#</a> 分布式锁</h5> <ul><li>多个人抢购一个物品，如何避免这件商品不被多个人抢到？</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#使用setnx设置一个公共锁</span>
+setnx lock_key value
+<span class="token comment">#利用setnx返回值特征，有值则返回失败，无值则返回成功</span>
+<span class="token comment">#抢购前，设置锁，成功则进入修改数据并删除锁，失败则等待</span>
+</code></pre></div><h5 id="死锁"><a href="#死锁" class="header-anchor">#</a> 死锁</h5> <ul><li>如果某个客户端加锁以后，客户端宕机无法执行之后步骤，或者忘记解锁，如何解决？</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#给锁设置一个时效，到期自动解锁</span>
+expire key second
+pexpire key millisenconds
+</code></pre></div><ul><li>由于redis操作通常都是毫秒级，因此锁定时间不宜过大，具体需要业务测试后确定
+<ul><li>测试百万次最长执行时间对应命令的最大耗时，测试百万次网络延迟平均耗时</li> <li>锁时间推荐：最大耗时 * 1.2+平均网络耗时 * 1.1</li></ul></li></ul> <h3 id="删除策略"><a href="#删除策略" class="header-anchor">#</a> 删除策略</h3> <h4 id="_1-过期数据"><a href="#_1-过期数据" class="header-anchor">#</a> 1.过期数据</h4> <ul><li>redis所有数据放在内存中，内存中可以用TTL指令获取其状态
+<ul><li>XX：具有时效性数据</li> <li>-1：永久有效数据</li> <li>-2：已经过期的、被删除或为定义的的数据</li></ul></li></ul> <h4 id="_2-数据删除策略"><a href="#_2-数据删除策略" class="header-anchor">#</a> 2.数据删除策略</h4> <ul><li><p>过期的数据并不一定立刻被删除了，redis有三种删除策略：</p> <ul><li><p>定时删除：创建一个定时器，当key设定了时间，且过期时间到达时，由定时任务执行删除</p> <ul><li>优点：节约内存，到时就删除，快速释放不必要的内存占用</li> <li>缺点：CPU压力很大，无论CPU此时负载多高，均占用CPU，会影响redis服务器响应时间和指令吞吐量。</li> <li>总结：用处理器性能换取存储时间（时间换空间）</li></ul></li> <li><p>惰性删除：数据到了过期时间，不做处理，等下次访问该数据时，如果过期就删除</p> <ul><li>优点：节约CPU性能，发现必须删除时再删除</li> <li>缺点：内存占用压力大，出现长期占用内存的数据</li> <li>总结：用存储空间换取处理器性能</li></ul></li> <li><p>定期删除：执行器在0-15个分区循环检查，在每个分区随机检查W个key,如果有失效的删除，当本次检查失效的key数量大于W * 25%,则继续这个过程，如果小于W * 25%，则检查下个分区</p> <ul><li>conf中，w的取值= ACTIVE_EXPIRE_CYCLE_LOOKUPS_PRE_LOOP属性值</li> <li>周期性轮询来检查redis中key的时效性，利用过期key占比方式控制删除频率</li> <li>特点1：CPU性能占用设置有峰值，检测频度可设置</li> <li>特点2：内存压力不会很大，长期占用的冷数据会被持续清理</li> <li>总结：周期性抽查存储空间（随机检查，重点抽查）</li></ul></li></ul></li> <li><p>redis内部时效性数据处理方法：</p> <ul><li>当带有时效的指令设置key后，redis在内存开辟一块空间，里面存储这个数据的<em>地址-&gt;过期的时间</em>。</li> <li>数据删除的目标是在内存占用和CPU占用中找平衡，避免redis性能下降甚至宕机。</li> <li>删除的时候，会找已经时效的时间，根据时间能找到对应的数据位置，执行删除。</li></ul></li></ul> <h4 id="_3-逐出算法"><a href="#_3-逐出算法" class="header-anchor">#</a> 3.逐出算法</h4> <ul><li>当新数据进入redis中，如果内存不足。这时候需要逐出算法</li> <li>影响数据逐出的相关配置</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#最大可使用内存,默认0，表示不限制，生产中根据需求来设定，通常设定50%以上</span>
+maxmemory
+<span class="token comment">#每次选取待删除的个数</span>
+maxmemory-sampes
+<span class="token comment">#删除策略配置</span>
+maxmemory-policy
+</code></pre></div><h5 id="影响数据逐出的相关配置"><a href="#影响数据逐出的相关配置" class="header-anchor">#</a> 影响数据逐出的相关配置</h5> <ul><li><p>检测易失数据（可能会过期的数据集server.bd[i].expire）</p> <ul><li>volatile-lru:挑选最少使用的数据淘汰</li> <li>volatile-lfu:挑选最近使用次数最少的淘汰</li> <li>volatile-ttl:挑选即将失效的淘汰</li> <li>volatile-random:随机选择数据淘汰</li></ul></li> <li><p>检测全库数据（所有数据集server.db[i].dict)</p> <ul><li>allkeys-lru:挑选最少使用的数据淘汰</li> <li>allkeys-lfu:挑选最近使用次数最少的淘汰</li> <li>allkeys-random:随机选择数据淘汰</li></ul></li> <li><p>放弃数据逐出</p> <ul><li>no-enviction:禁止驱逐,(4.0默认策略)，会引发错误OOM</li></ul></li></ul> <h3 id="redis-conf"><a href="#redis-conf" class="header-anchor">#</a> redis.conf</h3> <h4 id="_1-redis核心配置"><a href="#_1-redis核心配置" class="header-anchor">#</a> 1.redis核心配置</h4> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#基础配置#</span>
+<span class="token comment">#设置redis以守护线程方式启动</span>
+daemonize <span class="token function">yes</span><span class="token operator">|</span>no
+<span class="token comment">#绑定主机地址</span>
+<span class="token builtin class-name">bind</span> <span class="token number">127.0</span>.0.1
+<span class="token comment">#设置端口号</span>
+port <span class="token number">6379</span>
+<span class="token comment">#设置数据库数量</span>
+databases <span class="token number">16</span>
+
+<span class="token comment">#日志配置#</span>
+<span class="token comment">#设置服务器日志级别,默认verbose，生产notice即可，减少IO</span>
+loglevel debug<span class="token operator">|</span>verbose<span class="token operator">|</span>notice<span class="token operator">|</span>warning
+<span class="token comment">#日志记录名</span>
+logfile 端口号.log
+
+<span class="token comment">#客户端配置#</span>
+<span class="token comment">#设置同一时间客户端最大连接数量，默认无限制，当客户端连接达到上限，redis会关闭新连接</span>
+maxclients <span class="token number">0</span>
+<span class="token comment">#客户端闲置等待最大时长，达到最大时长关闭连接，如需关闭此功能，设置为0</span>
+<span class="token function">timeout</span> <span class="token number">300</span>
+
+<span class="token comment">#多服务器快捷配置#</span>
+<span class="token comment">#导入并加载指定配置文件信息，用于快捷创建redis公共配置较多的redis实例配置文件，便于维护</span>
+<span class="token comment">#类似继承，公共的写一个，然后特别的配置用include</span>
+include /path/server-端口号.conf
+</code></pre></div><h3 id="redis高级数据类型"><a href="#redis高级数据类型" class="header-anchor">#</a> redis高级数据类型</h3> <ul><li>所谓高级数据类型是为了解决单一问题存在的，它不同于前面5种有明显模型特征的基础类型</li></ul> <h4 id="_1-bitmaps"><a href="#_1-bitmaps" class="header-anchor">#</a> 1.Bitmaps</h4> <ul><li>业务场景：视频网站需要统计一整年未被观看过的视频，并对其下架，redis如何统计这些数据？</li> <li>方案：这个统计只区分是否，开关式的状态。Bitmaps提供一种二进制方案，二进制每一列代表一部电影，1表示播放过，0表示未播放，这样就最小力度可以保存大量数据</li> <li>这样的方案保存很方便，但是取值比较麻烦，需要根据位置来取，改值也是。拿时间换空间</li> <li>简单理解Bitmaps就是对字符串的二进制操作</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#基本操作#</span>
+<span class="token comment">#设定指定key对应偏移量上的bit值，value只能是0和1</span>
+setbit key offset value
+<span class="token comment">#获取指定值偏移量上的值</span>
+getbit key offset
+<span class="token comment">#注意，如果没设置也会getbit 为0，只要不存在全部是0</span>
+</code></pre></div><ul><li>扩展业务：1.统计每天某一部电影是否被点播 2.统计每天多少部电影被点播 3.统计每周/月/年多少部电影被点播4.统计年哪部没被点播</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#统计指定key中1的数量</span>
+bitcount key <span class="token punctuation">[</span>start end<span class="token punctuation">]</span> <span class="token comment">#start end没有默认全部</span>
+
+<span class="token comment"># 对指定key按位op进行交and、并or、非not、异或xor操作，并将结果保存destkey中</span>
+bitop <span class="token function">op</span> destkey key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre></div><ul><li>业务的redis解决方案</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#假如我们有10部电影，电影在数据库的id就来确定他们的offset位置</span>
+<span class="token comment">#按每一天设定一个key,对点击的电影进行值的修改</span>
+<span class="token comment">#我们设定10部电影分别id 1-10,4.1日id为1、3、5的点击过</span>
+setbit <span class="token number">20200401</span> <span class="token number">1</span> <span class="token number">1</span>
+setbit <span class="token number">20200401</span> <span class="token number">3</span> <span class="token number">1</span>
+setbit <span class="token number">20200401</span> <span class="token number">5</span> <span class="token number">1</span>
+<span class="token comment">#4.2日 id为2、3、5被点击过</span>
+setbit <span class="token number">20200402</span> <span class="token number">2</span> <span class="token number">1</span>
+setbit <span class="token number">20200402</span> <span class="token number">3</span> <span class="token number">1</span>
+setbit <span class="token number">20200402</span> <span class="token number">5</span> <span class="token number">1</span>
+
+<span class="token comment">#统计总共被点击过的电影数量</span>
+bitcount <span class="token number">20200401</span>
+bitcount <span class="token number">20200402</span>
+
+<span class="token comment"># 统计两天被点击过的电影存如key为01-02中</span>
+bitop or 01-02 <span class="token number">20200401</span> <span class="token number">20200402</span> 
+<span class="token comment"># 现在分别查1-10位置的值</span>
+getbit 01-02 <span class="token number">1</span><span class="token punctuation">..</span>.
+</code></pre></div><ul><li>Bitmap只能统计是否被播放，不能统计某部电影被播放过多少次</li></ul> <h4 id="_2-hyperloglog"><a href="#_2-hyperloglog" class="header-anchor">#</a> 2.HyperLogLog</h4> <ul><li>HyperLogLog只干一件事，统计不重复数据的数量</li> <li>基数：
+<ul><li>基数就是数据集去重后元素个数</li> <li>HyperLogLog就是用来作基数统计的，运用了LogLog算法</li></ul></li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#添加数据</span>
+pfadd key element <span class="token punctuation">[</span>element<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token comment">#统计数据</span>
+pfcount key <span class="token punctuation">[</span>key<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">]</span>
+<span class="token comment">#合并数据</span>
+pfmerge distkey sourcekey <span class="token punctuation">[</span>sourcekey<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre></div><ul><li>只用于基数统计，不保存数据</li> <li>核心是估算算法，最终值存在一定误差</li> <li>误差范围：基数估计的结果存在一个带有0.81%标准错误的近似值</li> <li>耗空间极小，占用12k内存</li></ul> <h4 id="_3-geo"><a href="#_3-geo" class="header-anchor">#</a> 3.GEO</h4> <ul><li>基于坐标点，来做地理位置的相关操作</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment">#求距离#</span>
+<span class="token comment">#添加坐标点lng经度lat纬度member是名称，如果两点需要计算，他们要放在一个key里</span>
+geoadd key lng lat member <span class="token punctuation">[</span>lng lat member<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token comment">#获取坐标点</span>
+geopos key member <span class="token punctuation">[</span>member<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token comment">#计算坐标间距离 unit是单位 可选m  km等</span>
+geodist key member1 menber2 <span class="token punctuation">[</span>unit<span class="token punctuation">]</span>
+
+<span class="token comment">#求范围#</span>
+<span class="token comment">#根据坐标求范围内数据 radius数字 后面加单位 m km</span>
+<span class="token comment"># withcoord 返回坐标  #withdist返回距离多远 # count范围 #加asc desc升降序</span>
+georadius key lng lat radius m<span class="token punctuation">\</span>km<span class="token punctuation">\</span>ft<span class="token punctuation">\</span>mi  <span class="token punctuation">[</span>withcoord<span class="token punctuation">]</span> <span class="token punctuation">[</span>withdist<span class="token punctuation">]</span> <span class="token punctuation">[</span>withhash<span class="token punctuation">]</span> <span class="token punctuation">[</span>count count<span class="token punctuation">]</span>
+<span class="token comment">#根据点求范围内数据</span>
+georadiusbymember key member radius m<span class="token punctuation">\</span>km<span class="token punctuation">\</span>ft<span class="token punctuation">\</span>mi  <span class="token punctuation">[</span>withcoord<span class="token punctuation">]</span> <span class="token punctuation">[</span>withdist<span class="token punctuation">]</span> <span class="token punctuation">[</span>withhash<span class="token punctuation">]</span> <span class="token punctuation">[</span>count count<span class="token punctuation">]</span>
+<span class="token comment">#获取指定坐标hash值</span>
+geohash key member <span class="token punctuation">[</span>menber<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+
+<span class="token comment">#附近10km内10个人升序排列，并显示距离我多远#geos为保存所有人坐标的key</span>
+georadius geos  <span class="token number">108</span>.xxx <span class="token number">34</span>.xxx <span class="token number">10</span> km withdist <span class="token number">1</span> <span class="token number">10</span> asc
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/lidagen.github.io/nosql/redis1.html" class="prev">
+        Redis基础 
+      </a></span> <span class="next"><a href="/lidagen.github.io/nosql/redis3.html">
+        Redis集群
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/lidagen.github.io/assets/js/app.25c904a4.js" defer></script><script src="/lidagen.github.io/assets/js/4.4bbfa83e.js" defer></script><script src="/lidagen.github.io/assets/js/2.c31ab677.js" defer></script><script src="/lidagen.github.io/assets/js/0.d2c14809.js" defer></script><script src="/lidagen.github.io/assets/js/1.22d17cb2.js" defer></script><script src="/lidagen.github.io/assets/js/3.658c3bd0.js" defer></script><script src="/lidagen.github.io/assets/js/138.7d595d6c.js" defer></script>
+  </body>
+</html>
